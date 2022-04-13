@@ -34,8 +34,6 @@ const VoxelDog = () => {
     }
   }, [renderer]);
 
-  /*eslint-disable react-hooks/exhautive-deps*/
-
   useEffect(() => {
     const { current: container } = refContainer;
     if (container && !renderer) {

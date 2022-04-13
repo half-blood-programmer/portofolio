@@ -2,7 +2,7 @@ import Head from "next/head";
 import { Box, Container } from "@chakra-ui/react";
 import Navbar from "../navbar.js";
 import VoxelDog from "../voxel-dog.js";
-import noSsr from "../no-ssr.js";
+// import noSsr from "../no-ssr.js";
 
 const Main = ({ children, router }) => {
   return (

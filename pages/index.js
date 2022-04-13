@@ -6,7 +6,6 @@ import {
   Image,
   useColorModeValue,
   Link,
-  SimpleGrid,
   List,
   ListItem,
   Icon,
@@ -17,7 +16,7 @@ import Paragraph from "../components/paragraph";
 import Section from "../components/section";
 import { BioSection, BioYear } from "../components/bio";
 import Layout from "../components/layouts/article";
-import { GridItem } from "../components/grid-item";
+// import { GridItem } from "../components/grid-item";
 import {
   IoLogoTwitter,
   IoLogoInstagram,
