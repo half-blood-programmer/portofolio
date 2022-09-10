@@ -1,40 +1,35 @@
-import Link from "next/link";
+import NextLink from "next/link";
 import Image from "next/image";
-import { Text, useColorModeValue } from "@chakra-ui/react";
+import { Text, useColorModeValue, Link } from "@chakra-ui/react";
 import styled from "@emotion/styled";
+import { IconButton, useColorMode, Menu, MenuButton } from "@chakra-ui/react";
+import { SunIcon, MoonIcon } from "@chakra-ui/icons";
+import { Icon } from "@chakra-ui/react";
+import { AnimatePresence, motion } from "framer-motion";
+import { MdHomeFilled } from "react-icons/md";
 
-const LogoBox = styled.span`
-  font-weight: bold;
-  font-size: 18px;
-  display: inline-flex;
-  align-items: center;
-  height: 30px;
-  line-height: 20px;
-  padding: 10px;
+const LinkItem = ({ href, path, children }) => {
+  const active = path === href;
 
-  &:hover img {
-    transform: rotate(20deg);
-  }
-`;
-
-const Logo = () => {
-  const footPrintImg = `/images/footprint${useColorModeValue("", "-dark")}.png`;
   return (
-    <Link href="/">
-      <a>
-        <LogoBox>
-          <Image src={footPrintImg} width={20} height={20} alt="logo"></Image>
-          <Text
-            color={useColorModeValue("gray.800", "whiteAlpha.900")}
-            fontFamily="M PLUS Rounded 1c"
-            fontWeight="bold"
-            ml={3}
-          >
-            Adam Junio Selva
-          </Text>
-        </LogoBox>
-      </a>
-    </Link>
+    <NextLink href={href}>
+      <Link p={2} opacity={active ? 0 : 1}>
+        {children}
+      </Link>
+    </NextLink>
+  );
+};
+
+const Logo = (props) => {
+  const { path } = props;
+  return (
+    <LinkItem href="/" path={path}>
+      <IconButton
+        icon={<Icon as={MdHomeFilled} />}
+        variant="outline"
+        aria-label="Options"
+      ></IconButton>
+    </LinkItem>
   );
 };
 

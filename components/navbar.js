@@ -41,9 +41,8 @@ const Navbar = (props) => {
       position="fixed"
       as="nav"
       w="100%"
-      bg={useColorModeValue("#ffffff40", "20202380")}
+      bg={useColorModeValue("#ffffff40", "20202389")}
       style={{ backdropFilter: "blur(10px)" }}
-      borderBottom="2px"
       borderColor={useColorModeValue("transparent", "#ffffff40")}
       boxShadow="sm"
       zIndex={1}
@@ -59,7 +58,7 @@ const Navbar = (props) => {
       >
         <Flex align="center" mr={5}>
           <Heading as="h1" size="lg" letterSpacing={"tighter"}>
-            <Logo />
+            <Logo path={path} />
           </Heading>
         </Flex>
         <Stack
@@ -69,21 +68,10 @@ const Navbar = (props) => {
           alignItems="center"
           flexGrow={1}
           mt={{ base: 4, md: 0 }}
-        >
-          <LinkItem href="/works" path={path}>
-            Works
-          </LinkItem>
-          <LinkItem href="/posts" path={path}>
-            Posts
-          </LinkItem>
-          <LinkItem href="/gets" path={path}>
-            Gets
-          </LinkItem>
-        </Stack>
+        ></Stack>
         <Box flex={1} align="right">
           <ThemeToggleButton />
-
-          <Box ml={2} display={{ base: "inline-block", md: "none" }}>
+          <Box ml={2} display={{ base: "inline-block" }}>
             <Menu>
               <MenuButton
                 as={IconButton}
@@ -105,11 +93,6 @@ const Navbar = (props) => {
                 <NextLink href="/posts" passHref>
                   <MenuItem as={Link} align="right">
                     Posts
-                  </MenuItem>
-                </NextLink>
-                <NextLink href="/gets" passHref>
-                  <MenuItem as={Link} align="right">
-                    Gets
                   </MenuItem>
                 </NextLink>
               </MenuList>
