@@ -17,25 +17,12 @@ import {
 import { HamburgerIcon } from "@chakra-ui/icons";
 // import theme from "../lib/theme";
 import ThemeToggleButton from "./theme-toggle-button";
-
-const LinkItem = ({ href, path, children }) => {
-  const active = path === href;
-  const inactiveColor = useColorModeValue("gray.200", "whiteAlpha.900");
-  return (
-    <NextLink href={href}>
-      <Link
-        p={2}
-        bg={active ? "#a0f4ff" : undefined}
-        color={active ? "#202023" : inactiveColor}
-      >
-        {children}
-      </Link>
-    </NextLink>
-  );
-};
+import { connect } from "react-redux";
+import { setAnimate } from "../store/actions/";
 
 const Navbar = (props) => {
   const { path } = props;
+  const { setAnimate } = props;
   return (
     <Box
       position="fixed"
@@ -81,18 +68,30 @@ const Navbar = (props) => {
               ></MenuButton>
               <MenuList>
                 <NextLink href="/" passHref>
-                  <MenuItem as={Link} align="right">
+                  <MenuItem
+                    as={Link}
+                    align="right"
+                    onClick={() => setAnimate("Home")}
+                  >
                     Home
                   </MenuItem>
                 </NextLink>
-                <NextLink href="/works" passHref>
-                  <MenuItem as={Link} align="right">
-                    Works
+                <NextLink href="/bio" passHref>
+                  <MenuItem
+                    as={Link}
+                    align="right"
+                    onClick={() => setAnimate("Bio")}
+                  >
+                    Bio
                   </MenuItem>
                 </NextLink>
-                <NextLink href="/posts" passHref>
-                  <MenuItem as={Link} align="right">
-                    Posts
+                <NextLink href="/works" passHref>
+                  <MenuItem
+                    as={Link}
+                    align="right"
+                    onClick={() => setAnimate("Works")}
+                  >
+                    Works
                   </MenuItem>
                 </NextLink>
               </MenuList>
@@ -104,4 +103,12 @@ const Navbar = (props) => {
   );
 };
 
-export default Navbar;
+const mapStateToProps = (state) => ({
+  animateKey: state.main,
+});
+
+const mapDispatchToProps = {
+  setAnimate: setAnimate,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar);

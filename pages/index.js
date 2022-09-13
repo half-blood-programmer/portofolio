@@ -14,26 +14,53 @@ import {
 import NextLink from "next/link";
 import Paragraph from "../components/paragraph";
 import Section from "../components/section";
-import { BioSection, BioYear } from "../components/bio";
 import Layout from "../components/layouts/article";
-// import { GridItem } from "../components/grid-item";
-import {
-  IoLogoTwitter,
-  IoLogoInstagram,
-  IoLogoGithub,
-  IoMail,
-} from "react-icons/io5";
+import { connect } from "react-redux";
+import { setAnimate } from "../store/actions/";
 
-const Page = () => {
+const LinkItem = ({ href, path, children }) => {
+  const active = path === href;
+  const inactiveColor = useColorModeValue("gray.200", "whiteAlpha.900");
+  return (
+    <NextLink href={href}>
+      <Link
+        p={2}
+        bg={active ? "#a0f4ff" : undefined}
+        color={active ? "#202023" : inactiveColor}
+      >
+        {children}
+      </Link>
+    </NextLink>
+  );
+};
+
+const Page = (props) => {
+  const { path } = props;
+  const { animateKey, setAnimate } = props;
+
   return (
     <Layout title="Homepage">
       <Container>
         <Section delay={0.2}>
           <Heading as="h3" variant="index-title">
             Hello 👋 I'm Adam and i love to code.{" "}
-            {/* <Heading variant="section-title">
-            </Heading>{" "}
-            May you want to see my works on that rack? */}
+            <button type="button" onClick={() => setAnimate("Bio")}>
+              <LinkItem href="/bio" path={path}>
+                Bio
+              </LinkItem>
+            </button>
+            <button type="button" onClick={() => setAnimate("Works")}>
+              <LinkItem href="/works" path={path}>
+                Works
+              </LinkItem>
+            </button>
+            <button type="button" onClick={() => setAnimate("Home")}>
+              <LinkItem href="/" path={path}>
+                Home
+              </LinkItem>
+            </button>
+            <br></br>
+            {animateKey.animateKey}
           </Heading>
         </Section>
       </Container>
@@ -41,4 +68,12 @@ const Page = () => {
   );
 };
 
-export default Page;
+const mapStateToProps = (state) => ({
+  animateKey: state.main,
+});
+
+const mapDispatchToProps = {
+  setAnimate: setAnimate,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Page);
