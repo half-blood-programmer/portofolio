@@ -8,6 +8,7 @@ import {
   Container,
   Heading,
   SimpleGrid,
+  Stat,
   Table,
   Td,
   Tr,
@@ -21,6 +22,11 @@ import { GoPrimitiveDot } from "react-icons/go";
 import { Icon } from "@chakra-ui/react";
 import Experience from "./bio/experience";
 import Skills from "./bio/skils";
+import Statistic from "./bio/stat";
+import { skillsData } from "./bio/skillsData";
+import { exeperienceData } from "./bio/experienceData";
+import { statData } from "./bio/statData";
+import Educational from "./bio/educational";
 
 const Bio = () => (
   <Layout title="Bio">
@@ -55,46 +61,20 @@ const Bio = () => (
           continues to improve and hone programming skills.{" "}
         </Paragraph>
       </Section>
-      <Section delay={0.3}>
-        <Heading as="h3" fontSize={20} mb={3} mt={4}>
-          Educational Background
-        </Heading>
-        <Table
-          sx={{
-            bgColor: "#bee3f80f",
-            borderRadius: "10px",
-          }}
-        >
-          <Tr>
-            <Td rowSpan={2}>Vocational High School 1 Wonosobo</Td>
-            <Td>Major Software Engineering</Td>
-          </Tr>
-          <Tr>
-            <Td fontSize={12}>
-              Completed education on time in 2019, with an average school exam
-              score of 8.9
-            </Td>
-          </Tr>
-          <Tr>
-            <Td rowSpan={2} borderBottom={"none"}>
-              State Financial Polytechnic STAN
-            </Td>
-            <Td>Major State Treasury</Td>
-          </Tr>
-          <Tr>
-            <Td fontSize={12} borderBottom={"none"}>
-              Completed education on time in 2022, with GPA score 3,67
-            </Td>
-          </Tr>
-        </Table>
-      </Section>
 
-      <Section delay={0.5}>
-        <Skills />
+      <Section delay={0.3}>
+        <Statistic statData={statData} />
+      </Section>
+      <Section delay={0.3}>
+        <Educational />
       </Section>
 
       <Section delay={0.4}>
-        <Experience />
+        <Skills skillsData={skillsData} />
+      </Section>
+
+      <Section delay={0.5}>
+        <Experience exeperienceData={exeperienceData} />
       </Section>
     </Container>
   </Layout>

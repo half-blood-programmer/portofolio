@@ -9,50 +9,83 @@ import {
   Heading,
 } from "@chakra-ui/react";
 import Paragraph from "../../components/paragraph";
+import { ResponsiveStream } from "@nivo/stream";
+import { ResponsiveAreaBump } from "@nivo/bump";
 
-const exeperienceData = {
-  w: {
-    title: "MBM PKN STAN",
-    year: "2019 - 2020",
-    desc: "blah blah blah ",
-  },
-  q: {
-    title: "Pasmaga SMNK N 1 Wonosobo",
-    year: "2017-2019",
-    desc: "blah blah blah",
-  },
-};
-
-const experience_keys = Object.values(exeperienceData);
-
-const Skills = () => (
+const Skills = ({ skillsData }) => (
   <>
     <Heading as="h3" fontSize={20} mb={3} mt={4}>
-      What I can,
+      My Language Time to Time,
     </Heading>
-    <Accordion
-      allowToggled
+    <Box
       sx={{
+        height: "300px",
         bgColor: "#bee3f80f",
         borderRadius: "10px",
       }}
     >
-      {experience_keys.map((val) => {
-        return (
-          <AccordionItem key={val.title}>
-            <AccordionButton>
-              <Box flex="1" textAlign={"left"}>
-                {val.title} <Badge mb={1}>{val.year}</Badge>
-              </Box>
-              <AccordionIcon />
-            </AccordionButton>
-            <AccordionPanel>
-              <Paragraph>{val.desc}</Paragraph>
-            </AccordionPanel>
-          </AccordionItem>
-        );
-      })}
-    </Accordion>
+      <ResponsiveAreaBump
+        data={skillsData}
+        margin={{ top: 40, right: 90, bottom: 40, left: 40 }}
+        spacing={8}
+        colors={{ scheme: "nivo" }}
+        theme={{ textColor: "#ffffff", fontSize: "12px" }}
+        blendMode="normal"
+        defs={[
+          {
+            id: "dots",
+            type: "patternDots",
+            background: "inherit",
+            color: "#ffffff",
+            size: 4,
+            padding: 1,
+            stagger: true,
+          },
+          {
+            id: "lines",
+            type: "patternLines",
+            background: "inherit",
+            color: "#ffffff",
+            rotation: -45,
+            lineWidth: 6,
+            spacing: 10,
+          },
+        ]}
+        fill={[
+          {
+            match: {
+              id: "CoffeeScript",
+            },
+            id: "dots",
+          },
+          {
+            match: {
+              id: "TypeScript",
+            },
+            id: "lines",
+          },
+        ]}
+        startLabel={false}
+        tooltip="id"
+        endLabel="id"
+        axisTop={{
+          tickSize: 5,
+          tickPadding: 5,
+          tickRotation: 0,
+          legend: "",
+          legendPosition: "middle",
+          legendOffset: -36,
+        }}
+        axisBottom={{
+          tickSize: 5,
+          tickPadding: 5,
+          tickRotation: 0,
+          legend: "",
+          legendPosition: "middle",
+          legendOffset: 32,
+        }}
+      />
+    </Box>
   </>
 );
 
