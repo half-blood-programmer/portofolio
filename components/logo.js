@@ -6,7 +6,7 @@ import { IconButton, useColorMode, Menu, MenuButton } from "@chakra-ui/react";
 import { SunIcon, MoonIcon } from "@chakra-ui/icons";
 import { Icon } from "@chakra-ui/react";
 import { AnimatePresence, motion } from "framer-motion";
-import { MdHomeFilled } from "react-icons/md";
+import { MdSettings, MdHomeFilled } from "react-icons/md";
 import { connect } from "react-redux";
 import { setAnimate } from "../store/actions/";
 
@@ -27,14 +27,24 @@ const Logo = (props) => {
   const { setAnimate } = props;
 
   return (
-    <LinkItem href="/" path={path}>
-      <IconButton
-        icon={<Icon as={MdHomeFilled} />}
-        variant="outline"
-        aria-label="Options"
-        onClick={() => setAnimate("Home")}
-      ></IconButton>
-    </LinkItem>
+    <>
+      <LinkItem href="/" path={path}>
+        <IconButton
+          icon={<Icon as={MdHomeFilled} />}
+          variant="outline"
+          aria-label="Options"
+          onClick={() => setAnimate("Home")}
+        ></IconButton>
+      </LinkItem>
+      <LinkItem href="/works" path={path}>
+        <IconButton
+          icon={<Icon as={MdSettings} />}
+          variant="outline"
+          aria-label="Options"
+          onClick={() => setAnimate("Works")}
+        ></IconButton>
+      </LinkItem>
+    </>
   );
 };
 
