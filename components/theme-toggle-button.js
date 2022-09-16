@@ -1,28 +1,80 @@
-import { IconButton, useColorMode, useColorModeValue } from "@chakra-ui/react";
+import {
+  Box,
+  IconButton,
+  Switch,
+  useColorMode,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import { SunIcon, MoonIcon } from "@chakra-ui/icons";
 import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 const ThemeToggleButton = () => {
   const { toggleColorMode } = useColorMode();
+  const [mode, setMode] = useState("");
+  const [isChecked, setIsChecked] = useState(false);
+
+  useEffect(() => {
+    // Perform localStorage action
+    const getMode = localStorage.getItem("chakra-ui-color-mode");
+    if (getMode === "dark") {
+      setIsChecked(true);
+    }
+  }, []);
+
+  const iconVariants = {
+    light: { x: 0 },
+    dark: { x: 22 },
+  };
+
+  const handleChange = () => {
+    console.log("im clikced");
+
+    setIsChecked(!isChecked);
+  };
 
   return (
-    <AnimatePresence exitBeforeEnter initial={false}>
-      <motion.div
-        style={{ display: "inline-block" }}
-        key={useColorModeValue("light", "dark")}
-        initial={{ y: -20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        exit={{ y: 20, opacity: 0 }}
-        transition={{ duration: 0.2 }}
+    <>
+      <Switch
+        size="lg"
+        isChecked={isChecked}
+        onChange={handleChange}
+        spacing={0}
+        paddingLeft={0}
+        colorScheme={useColorModeValue("gray", "blackAlpha 900")}
       >
-        <IconButton
-          aria-label="Toggle theme"
-          colorScheme={useColorModeValue("gray", "orange")}
-          icon={useColorModeValue(<MoonIcon />, <SunIcon />)}
+        <Box
+          sx={{
+            position: "absolute",
+            zIndex: 99,
+            top: 0,
+            float: "right",
+            margin: "-6px 0 0 -16px",
+            backgroundColor: "transparent",
+            w: "50px",
+          }}
           onClick={toggleColorMode}
-        ></IconButton>
-      </motion.div>
-    </AnimatePresence>
+        >
+          <motion.div
+            style={{ display: "inline-block" }}
+            key={useColorModeValue("light", "dark")}
+            variants={iconVariants}
+            animate={isChecked ? "dark" : "light"}
+            exit={isChecked ? "dark" : "light"}
+          >
+            <IconButton
+              aria-label="Toggle theme"
+              icon={useColorModeValue(<SunIcon />, <MoonIcon />)}
+              sx={{
+                borderRadius: "100%",
+                background: "transparent",
+                color: useColorModeValue("red.400", "blue.400"),
+              }}
+            ></IconButton>
+          </motion.div>
+        </Box>
+      </Switch>
+    </>
   );
 };
 

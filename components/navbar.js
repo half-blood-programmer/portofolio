@@ -13,6 +13,7 @@ import {
   MenuButton,
   IconButton,
   useColorModeValue,
+  useColorMode,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 // import theme from "../lib/theme";
@@ -23,6 +24,7 @@ import { setAnimate } from "../store/actions/";
 const Navbar = (props) => {
   const { path } = props;
   const { setAnimate } = props;
+  const { toggleColorMode } = useColorMode();
   return (
     <Box
       position="fixed"
@@ -57,7 +59,7 @@ const Navbar = (props) => {
           mt={{ base: 4, md: 0 }}
         ></Stack>
         <Box flex={1} align="right">
-          <ThemeToggleButton />
+          <ThemeToggleButton onClick={toggleColorMode} />
           <Box ml={2} display={{ base: "inline-block" }}>
             <Menu>
               <MenuButton

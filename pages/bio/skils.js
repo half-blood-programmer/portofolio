@@ -29,7 +29,7 @@ const Skills = ({ skillsData }) => (
         margin={{ top: 40, right: 90, bottom: 40, left: 40 }}
         spacing={8}
         colors={{ scheme: "nivo" }}
-        theme={{ textColor: "#ffffff", fontSize: "12px" }}
+        theme={{ textColor: "rgb(243 135 118)", fontSize: "12px" }}
         blendMode="normal"
         defs={[
           {

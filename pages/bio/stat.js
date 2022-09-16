@@ -32,7 +32,7 @@ const Statistic = ({ statData }) => (
         dotSize={10}
         dotColor={{ theme: "background" }}
         dotBorderWidth={2}
-        theme={{ textColor: "#cfac8e", fontSize: "12px" }}
+        theme={{ textColor: "rgb(243 135 118)", fontSize: "12px" }}
         colors={{ scheme: "nivo" }}
         blendMode="normal"
         motionConfig="wobbly"

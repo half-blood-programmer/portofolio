@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, Suspense } from "react";
-import { Box } from "@chakra-ui/react";
+import { Box, Spinner } from "@chakra-ui/react";
 const Spline = React.lazy(() => import("@splinetool/react-spline"));
 import { connect } from "react-redux";
 import { setAnimate } from "../store/actions/";
@@ -77,11 +77,14 @@ const PortofolioIcon = (props) => {
     >
       <Suspense
         fallback={
-          <Box>
-            <Paragraph>
-              <h1>Loading...{animateTrigger}</h1>
-            </Paragraph>
-          </Box>
+          <Spinner
+            size="xl"
+            position="absolute"
+            left="50%"
+            top="50%"
+            ml="calc(0px - var(--spinner-size)/2)"
+            mt="calc(0px - var(--spinner-size))"
+          ></Spinner>
         }
       >
         <Spline
