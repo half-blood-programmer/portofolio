@@ -42,6 +42,7 @@ const ThemeToggleButton = () => {
         spacing={0}
         paddingLeft={0}
         colorScheme={useColorModeValue("gray", "blackAlpha 900")}
+        style={{ backdropFilter: "blur(10px)", borderRadius: "20px" }}
       >
         <Box
           sx={{

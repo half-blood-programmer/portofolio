@@ -10,14 +10,10 @@ import { MdSettings, MdHomeFilled } from "react-icons/md";
 import { connect } from "react-redux";
 import { setAnimate } from "../store/actions/";
 
-const LinkItem = ({ href, path, children }) => {
-  const active = path === href;
-
+const LinkItem = ({ href, children }) => {
   return (
     <NextLink href={href}>
-      <Link p={2} opacity={active ? 0 : 1}>
-        {children}
-      </Link>
+      <Link p={2}>{children}</Link>
     </NextLink>
   );
 };
@@ -25,23 +21,30 @@ const LinkItem = ({ href, path, children }) => {
 const Logo = (props) => {
   const { path } = props;
   const { setAnimate } = props;
+  const activeHome = path === "/";
+  const activeWorks = path === "/bio" || path === "/" || path === "/works";
 
+  // alert(path);
   return (
     <>
-      <LinkItem href="/" path={path}>
+      <LinkItem href="/">
         <IconButton
-          icon={<Icon as={MdHomeFilled} />}
+          icon={<Icon as={MdHomeFilled} color="gray" />}
           variant="outline"
+          display={activeHome ? "none" : "inline-block"}
           aria-label="Options"
           onClick={() => setAnimate("Home")}
+          style={{ backdropFilter: "blur(10px)" }}
         ></IconButton>
       </LinkItem>
-      <LinkItem href="/works" path={path}>
+      <LinkItem href="/works">
         <IconButton
-          icon={<Icon as={MdSettings} />}
+          display={activeWorks ? "none" : "inline-block"}
+          icon={<Icon as={MdSettings} color="gray" />}
           variant="outline"
           aria-label="Options"
           onClick={() => setAnimate("Works")}
+          style={{ backdropFilter: "blur(10px)" }}
         ></IconButton>
       </LinkItem>
     </>

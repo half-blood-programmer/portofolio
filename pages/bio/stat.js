@@ -9,8 +9,6 @@ import {
   Heading,
 } from "@chakra-ui/react";
 import Paragraph from "../../components/paragraph";
-import { ResponsiveStream } from "@nivo/stream";
-import { ResponsiveAreaBump } from "@nivo/bump";
 import { ResponsiveRadar } from "@nivo/radar";
 
 const Statistic = ({ statData }) => (
