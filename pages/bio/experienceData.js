@@ -1,4 +1,4 @@
-export default exeperienceData = {
+const exeperienceData = {
   d: {
     title: "Dies Natalis VII PKN STAN",
     year: "2022",
@@ -65,3 +65,5 @@ export default exeperienceData = {
     desc: "blah blah blah",
   },
 };
+
+export default exeperienceData;

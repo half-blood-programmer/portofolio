@@ -1,4 +1,4 @@
-export default skillsData = [
+const skillsData = [
   {
     id: "React",
     data: [
@@ -150,3 +150,5 @@ export default skillsData = [
     ],
   },
 ];
+
+export default skillsData;

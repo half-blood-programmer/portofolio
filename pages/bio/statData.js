@@ -1,4 +1,4 @@
-export default statData = [
+const statData = [
   {
     id: "Web Programing",
     stats: 90,
@@ -20,3 +20,5 @@ export default statData = [
     stats: 55,
   },
 ];
+
+export default statData;
