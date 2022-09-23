@@ -6,8 +6,8 @@ import { GoPrimitiveDot } from "react-icons/go";
 import { Icon } from "@chakra-ui/react";
 import Skills from "./bio/skils";
 import Statistic from "./bio/stat";
-import skillsData from "./bio/skillsData";
-import statData from "./bio/statData";
+import skillsData from "../lib/skillsData";
+import statData from "../lib/statData";
 import Educational from "./bio/educational";
 
 const Bio = () => (
