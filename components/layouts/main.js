@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Box, Container, Link, useColorModeValue } from "@chakra-ui/react";
+import { Box, Container } from "@chakra-ui/react";
 import Navbar from "../navbar.js";
 import PortofolioIcon from "../portofolio-icon";
 import NoSsr from "../no-ssr.js";

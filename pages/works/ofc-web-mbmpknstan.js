@@ -3,8 +3,6 @@ import { LockIcon } from "@chakra-ui/icons";
 import { Title, WorkImage, Meta } from "../../components/work";
 import Paragraph from "../../components/paragraph";
 import Layout from "../../components/layouts/article";
-import { GoMarkGithub } from "react-icons/go";
-import { Icon } from "@chakra-ui/react";
 const Work = () => {
   return (
     <Layout title="Masjid Baitul Maal PKN STAN">

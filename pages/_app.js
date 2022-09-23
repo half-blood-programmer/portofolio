@@ -3,8 +3,6 @@ import Fonts from "../components/font";
 import Layout from "../components/layouts/main";
 import theme from "../lib/theme";
 import { AnimatePresence } from "framer-motion";
-import { Provider } from "react-redux";
-import withRedux from "next-redux-wrapper";
 import { wrapper } from "../store/store";
 
 const Website = ({ Component, pageProps, router }) => {

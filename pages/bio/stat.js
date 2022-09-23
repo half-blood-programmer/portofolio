@@ -1,13 +1,4 @@
-import {
-  Accordion,
-  AccordionButton,
-  AccordionIcon,
-  AccordionItem,
-  AccordionPanel,
-  Badge,
-  Box,
-  Heading,
-} from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import Paragraph from "../../components/paragraph";
 import { ResponsiveRadar } from "@nivo/radar";
 

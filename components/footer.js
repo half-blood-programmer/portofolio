@@ -12,7 +12,7 @@ import { IoLogoTwitter } from "react-icons/io";
 import { GoMarkGithub } from "react-icons/go";
 import { AiFillInstagram, AiFillGoogleCircle } from "react-icons/ai";
 import { Icon } from "@chakra-ui/react";
-const Footer = (props) => {
+const Footer = () => {
   return (
     <Box flex={1} align="left">
       <Box

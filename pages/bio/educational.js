@@ -1,19 +1,4 @@
-import {
-  Accordion,
-  AccordionButton,
-  AccordionIcon,
-  AccordionItem,
-  AccordionPanel,
-  Box,
-  Container,
-  Heading,
-  SimpleGrid,
-  Stat,
-  Table,
-  Tbody,
-  Td,
-  Tr,
-} from "@chakra-ui/react";
+import { Heading, Table, Tbody, Td, Tr } from "@chakra-ui/react";
 
 const Educational = () => (
   <>

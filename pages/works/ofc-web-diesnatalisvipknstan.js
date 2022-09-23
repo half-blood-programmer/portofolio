@@ -6,7 +6,6 @@ import {
   Link,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { LockIcon } from "@chakra-ui/icons";
 import { Title, WorkImage, Meta } from "../../components/work";
 import Paragraph from "../../components/paragraph";
 import Layout from "../../components/layouts/article";
@@ -43,7 +42,7 @@ const Work = () => {
           This website aims to invite students to feel like returning to campus,
           which at that time was studying from home. With this concept, the map
           from the campus on this website is used as a medium for conveying
-          information on the lot of PKN STAN's VI Anniversary activities.
+          information on the lot of PKN STAN&apos;s VI Anniversary activities.
         </Paragraph>
         <List ml={4} my={6}>
           <ListItem>

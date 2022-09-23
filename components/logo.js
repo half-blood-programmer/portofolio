@@ -1,11 +1,7 @@
 import NextLink from "next/link";
-import Image from "next/image";
-import { Text, useColorModeValue, Link } from "@chakra-ui/react";
-import styled from "@emotion/styled";
-import { IconButton, useColorMode, Menu, MenuButton } from "@chakra-ui/react";
-import { SunIcon, MoonIcon } from "@chakra-ui/icons";
+import { useColorModeValue, Link } from "@chakra-ui/react";
+import { IconButton } from "@chakra-ui/react";
 import { Icon } from "@chakra-ui/react";
-import { AnimatePresence, motion } from "framer-motion";
 import { MdSettings, MdHomeFilled } from "react-icons/md";
 import { connect } from "react-redux";
 import { setAnimate } from "../store/actions/";

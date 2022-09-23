@@ -1,14 +1,4 @@
-import {
-  Accordion,
-  AccordionButton,
-  AccordionIcon,
-  AccordionItem,
-  AccordionPanel,
-  Badge,
-  Box,
-  Heading,
-} from "@chakra-ui/react";
-import Paragraph from "../../components/paragraph";
+import { Box, Heading } from "@chakra-ui/react";
 import { ResponsiveAreaBump } from "@nivo/bump";
 
 const Skills = ({ skillsData }) => (

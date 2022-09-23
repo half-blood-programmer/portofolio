@@ -33,6 +33,7 @@ const Experience = ({ exeperienceData }) => {
                   : "1px solid #ffffff1a"
               }
               borderTop={"none"}
+              key={val.title}
             >
               <AccordionButton>
                 <Box flex="1" textAlign={"left"}>
