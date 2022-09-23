@@ -1,7 +1,7 @@
 import { applyMiddleware, compose, createStore } from "redux";
-import rootReducer from "./reducers";
-import { createWrapper } from "next-redux-wrapper";
 import thunk from "redux-thunk";
+import { createWrapper } from "next-redux-wrapper";
+import rootReducer from "./reducers";
 
 const middleware = [thunk];
 
