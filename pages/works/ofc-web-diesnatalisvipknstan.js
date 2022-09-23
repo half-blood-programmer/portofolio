@@ -1,4 +1,11 @@
-import { Container, Badge, List, ListItem, Link } from "@chakra-ui/react";
+import {
+  Container,
+  Badge,
+  List,
+  ListItem,
+  Link,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import { LockIcon } from "@chakra-ui/icons";
 import { Title, WorkImage, Meta } from "../../components/work";
 import Paragraph from "../../components/paragraph";
@@ -28,7 +35,7 @@ const Work = () => {
           building having its own information.
         </Paragraph>
         <WorkImage
-          src="/images/works/inkdrop_01.png"
+          src="/images/works/21dn6-01.png"
           alt="Dies Natalis VI-rtual Zone PKN STAN"
         ></WorkImage>
 
@@ -57,7 +64,7 @@ const Work = () => {
             <Link
               href="https://github.com/adamjunios/dies-natalis-vi-rtual-zone-2021"
               target={"_blank"}
-              sx={{ color: "white" }}
+              colorScheme={useColorModeValue("red", "gray")}
             >
               <Icon as={GoMarkGithub} /> adamjunios
             </Link>

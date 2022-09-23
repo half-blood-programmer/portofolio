@@ -14,7 +14,7 @@ const Experience = ({ exeperienceData }) => {
   const experience_res = Object.values(exeperienceData);
   return (
     <>
-      <Heading as="h3" fontSize={20} mb={3} mt={4}>
+      <Heading as="h3" fontSize={20} mb={3} mt={10}>
         Organizational and Committee Experience
       </Heading>
       <Accordion

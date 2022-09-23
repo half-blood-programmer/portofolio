@@ -34,7 +34,7 @@ const Work = () => {
           itself. Therefore, this project was formed.
         </Paragraph>
         <WorkImage
-          src="/images/works/inkdrop_01.png"
+          src="/images/works/20mbm-01.png"
           alt="Masjid Baitul Maal PKN STAN"
         ></WorkImage>
 

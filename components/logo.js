@@ -29,22 +29,36 @@ const Logo = (props) => {
     <>
       <LinkItem href="/">
         <IconButton
-          icon={<Icon as={MdHomeFilled} color="gray" />}
+          icon={
+            <Icon
+              as={MdHomeFilled}
+              colorScheme={useColorModeValue("red", "gray")}
+              marginTop={1}
+            />
+          }
           variant="outline"
           display={activeHome ? "none" : "inline-block"}
           aria-label="Options"
           onClick={() => setAnimate("Home")}
           style={{ backdropFilter: "blur(10px)" }}
+          colorScheme={useColorModeValue("red", "gray")}
         ></IconButton>
       </LinkItem>
       <LinkItem href="/works">
         <IconButton
           display={activeWorks ? "none" : "inline-block"}
-          icon={<Icon as={MdSettings} color="gray" />}
+          icon={
+            <Icon
+              as={MdSettings}
+              colorScheme={useColorModeValue("red", "gray")}
+              marginTop={1}
+            />
+          }
           variant="outline"
           aria-label="Options"
           onClick={() => setAnimate("Works")}
           style={{ backdropFilter: "blur(10px)" }}
+          colorScheme={useColorModeValue("red", "gray")}
         ></IconButton>
       </LinkItem>
     </>

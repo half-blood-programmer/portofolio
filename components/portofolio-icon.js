@@ -3,12 +3,12 @@ import { Box, Spinner } from "@chakra-ui/react";
 const Spline = React.lazy(() => import("@splinetool/react-spline"));
 import { connect } from "react-redux";
 import { setAnimate } from "../store/actions/";
-import Paragraph from "./paragraph";
 
 const PortofolioIcon = (props) => {
   const [animateTrigger, setAnimateTrigger] = useState("blah");
   const spline = useRef();
   const { animateKey } = props;
+  const [currentAnimation, setCurrentAnimation] = useState("blah");
 
   function onLoad(splineApp) {
     // save the app in a ref for later use
@@ -21,14 +21,17 @@ const PortofolioIcon = (props) => {
 
   useEffect(() => {
     switch (animateTrigger) {
-      case "Rotate":
-        triggerAnimationRotate();
-        break;
       case "Bio":
         triggerAnimationBio();
         break;
       case "Works":
         triggerAnimationWorks();
+        break;
+      case "Light":
+        triggerAnimationLight();
+        break;
+      case "Dark":
+        triggerAnimationDark();
         break;
       case "Home":
         clearAnimation();
@@ -36,32 +39,40 @@ const PortofolioIcon = (props) => {
     }
   }, [animateTrigger]);
 
-  function triggerAnimationRotate() {
-    spline.current.emitEvent("keyDown", "Group");
-
-    console.log("animation rotate is run");
-  }
-
   function triggerAnimationBio() {
-    triggerAnimationRotate();
-
     spline.current.emitEvent("keyDown", "Headfull");
-
+    setCurrentAnimation("Bio");
     console.log("animation for Bio is run");
   }
 
   function triggerAnimationWorks() {
-    triggerAnimationRotate();
-    spline.current.emitEvent("keyDown", "chair");
-
+    spline.current.emitEvent("keyDown", "computer");
+    setCurrentAnimation("Works");
     console.log("animation for Works is run");
   }
 
-  function clearAnimation() {
-    spline.current.emitEventReverse("keyDown", "Group");
-    spline.current.emitEventReverse("keyDown", "Headfull");
-    spline.current.emitEventReverse("keyDown", "chair");
+  function triggerAnimationLight() {
+    spline.current.emitEvent("keyDown", "Point Light");
+    console.log("is going to dark");
+  }
 
+  function triggerAnimationDark() {
+    spline.current.emitEventReverse("keyDown", "Point Light");
+    console.log("is going to light");
+  }
+  function clearAnimation() {
+    switch (currentAnimation) {
+      case "Bio":
+        spline.current.emitEventReverse("keyDown", "Headfull");
+
+        break;
+      case "Works":
+        spline.current.emitEventReverse("keyDown", "computer");
+
+        break;
+    }
+
+    setCurrentAnimation("blah");
     console.log("all animation is back to base state");
   }
 

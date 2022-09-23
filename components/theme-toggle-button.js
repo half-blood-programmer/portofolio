@@ -6,13 +6,15 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { SunIcon, MoonIcon } from "@chakra-ui/icons";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { connect } from "react-redux";
+import { setAnimate } from "../store/actions/";
 
-const ThemeToggleButton = () => {
+const ThemeToggleButton = (props) => {
   const { toggleColorMode } = useColorMode();
-  const [mode, setMode] = useState("");
   const [isChecked, setIsChecked] = useState(false);
+  const { setAnimate } = props;
 
   useEffect(() => {
     // Perform localStorage action
@@ -28,8 +30,12 @@ const ThemeToggleButton = () => {
   };
 
   const handleChange = () => {
-    console.log("im clikced");
-
+    console.log("Switching theme");
+    if (isChecked) {
+      setAnimate("Dark");
+    } else {
+      setAnimate("Light");
+    }
     setIsChecked(!isChecked);
   };
 
@@ -49,10 +55,10 @@ const ThemeToggleButton = () => {
             position: "absolute",
             zIndex: 99,
             top: 0,
-            float: "right",
-            margin: "-6px 0 0 -16px",
+            textAlign: "left",
+            margin: "-6px 0 0 -6px",
             backgroundColor: "transparent",
-            w: "50px",
+            w: "70px",
           }}
           onClick={toggleColorMode}
         >
@@ -66,6 +72,7 @@ const ThemeToggleButton = () => {
             <IconButton
               aria-label="Toggle theme"
               icon={useColorModeValue(<SunIcon />, <MoonIcon />)}
+              onClick={toggleColorMode}
               sx={{
                 borderRadius: "100%",
                 background: "transparent",
@@ -79,4 +86,12 @@ const ThemeToggleButton = () => {
   );
 };
 
-export default ThemeToggleButton;
+const mapStateToProps = (state) => ({
+  animateKey: state.main,
+});
+
+const mapDispatchToProps = {
+  setAnimate: setAnimate,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ThemeToggleButton);

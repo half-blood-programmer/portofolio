@@ -1,4 +1,11 @@
-import { Container, Badge, List, ListItem, Link } from "@chakra-ui/react";
+import {
+  Container,
+  Badge,
+  List,
+  ListItem,
+  Link,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import { LockIcon } from "@chakra-ui/icons";
 import { Title, WorkImage, Meta } from "../../components/work";
 import Paragraph from "../../components/paragraph";
@@ -32,7 +39,7 @@ const Work = () => {
           Therefore, this project was formed.
         </Paragraph>
         <WorkImage
-          src="/images/works/inkdrop_01.png"
+          src="/images/works/22auditphoria-01.png"
           alt="Web-based Test Auditphoria3.0"
         ></WorkImage>
 
@@ -62,7 +69,7 @@ const Work = () => {
             <Link
               href="https://github.com/fsaditya"
               target={"_blank"}
-              sx={{ color: "white" }}
+              colorScheme={useColorModeValue("red", "gray")}
             >
               <Icon as={GoMarkGithub} /> Fsaditya
             </Link>

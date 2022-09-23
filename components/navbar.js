@@ -13,11 +13,9 @@ import {
   MenuButton,
   IconButton,
   useColorModeValue,
-  useColorMode,
   Text,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
-// import theme from "../lib/theme";
 import ThemeToggleButton from "./theme-toggle-button";
 import { connect } from "react-redux";
 import { setAnimate } from "../store/actions/";
@@ -27,17 +25,23 @@ import { SiRedux, SiChakraui } from "react-icons/si";
 import { MdOutlineBarChart } from "react-icons/md";
 import { HiOutlineGlobe } from "react-icons/hi";
 import { Icon } from "@chakra-ui/react";
+import Footer from "./footer";
 const Navbar = (props) => {
   const { path } = props;
   const { setAnimate } = props;
-  const { toggleColorMode } = useColorMode();
   return (
     <Box
       position="fixed"
       as="nav"
       w="100%"
-      bg={useColorModeValue("#ffffff40", "20202389")}
-      // style={{ backdropFilter: "blur(10px)" }}
+      bg={"transparent"}
+      backdropFilter={{
+        base: "none",
+        xl: "none",
+        md: "none",
+        sm: "blur(10px)",
+      }}
+      // style={{ md: { backdropFilter: "blur(10px)" } }}
       // borderColor={useColorModeValue("transparent", "#ffffff40")}
       // boxShadow="sm"
       zIndex={1}
@@ -56,16 +60,8 @@ const Navbar = (props) => {
             <Logo path={path} />
           </Heading>
         </Flex>
-        <Stack
-          direction={{ base: "column", md: "row" }}
-          display={{ base: "none", md: "flex" }}
-          width={{ base: "full", md: "auto" }}
-          alignItems="center"
-          flexGrow={1}
-          mt={{ base: 4, md: 0 }}
-        ></Stack>
         <Box flex={1} align="right">
-          <ThemeToggleButton onClick={toggleColorMode} />
+          <ThemeToggleButton />
           <Box
             ml={2}
             display={{ base: "inline-block" }}
@@ -74,18 +70,24 @@ const Navbar = (props) => {
             <Menu>
               <MenuButton
                 as={IconButton}
-                icon={<HamburgerIcon />}
+                icon={
+                  <HamburgerIcon
+                    colorScheme={useColorModeValue("red", "gray")}
+                  />
+                }
                 variant="outline"
                 aria-label="Options"
+                colorScheme={useColorModeValue("red", "gray")}
               ></MenuButton>
 
-              <MenuList sx={{ textAlign: "right" }} p={2}>
+              <MenuList sx={{ textAlign: "center" }} p={2}>
                 <NextLink href="/" passHref>
                   <MenuItem
                     as={Link}
                     align="right"
                     mt={1}
-                    justifyContent="end"
+                    justifyContent="start"
+                    fontSize={18}
                     onClick={() => setAnimate("Home")}
                   >
                     Home
@@ -95,7 +97,8 @@ const Navbar = (props) => {
                   <MenuItem
                     as={Link}
                     align="right"
-                    justifyContent="end"
+                    justifyContent="start"
+                    fontSize={18}
                     onClick={() => setAnimate("Bio")}
                   >
                     About Me
@@ -105,50 +108,49 @@ const Navbar = (props) => {
                   <MenuItem
                     as={Link}
                     align="right"
-                    mb={8}
-                    justifyContent="end"
+                    mb={4}
+                    justifyContent="start"
+                    fontSize={18}
                     onClick={() => setAnimate("Works")}
                   >
                     My Works
                   </MenuItem>
                 </NextLink>
+                <Footer />
                 <hr></hr>
                 <Heading
                   as="h6"
                   size="md"
                   p={2}
-                  fontSize={18}
+                  fontSize={14}
                   letterSpacing={"tighter"}
                 >
                   This web is using
                 </Heading>
-                <Text px={2} fontSize={14}>
+                <Text px={2} fontSize={11} textAlign={"center"}>
                   <Link href="https://nextjs.org/" target={"_blank"}>
-                    {" "}
-                    <Icon as={TbBrandNextjs} pt={1} />
-                    Nextjs
+                    <Icon as={TbBrandNextjs} /> Nextjs
                   </Link>{" "}
                   |{" "}
                   <Link href="https://reactjs.org/" target={"_blank"}>
-                    <Icon as={GrReactjs} pt={1} />
-                    Reactjs
+                    <Icon as={GrReactjs} /> Reactjs
                   </Link>{" "}
                   |{" "}
                   <Link href="https://redux.js.org/" target={"_blank"}>
-                    <Icon as={SiRedux} pt={1} /> Redux
+                    <Icon as={SiRedux} /> Redux
                   </Link>
                 </Text>
-                <Text px={2} fontSize={14}>
+                <Text px={2} fontSize={11} textAlign={"center"}>
                   <Link href="https://chakra-ui.com/" target={"_blank"}>
-                    <Icon as={SiChakraui} pt={1} /> ChakraUI
+                    <Icon as={SiChakraui} /> ChakraUI
                   </Link>{" "}
                   |{" "}
                   <Link href="https://nivo.rocks/" target={"_blank"}>
-                    <Icon as={MdOutlineBarChart} pt={1} /> Nivo
+                    <Icon as={MdOutlineBarChart} /> Nivo
                   </Link>{" "}
                   |{" "}
                   <Link href="https://spline.design/" target={"_blank"}>
-                    <Icon as={HiOutlineGlobe} pt={1} /> Spline{" "}
+                    <Icon as={HiOutlineGlobe} /> Spline{" "}
                   </Link>
                 </Text>
               </MenuList>

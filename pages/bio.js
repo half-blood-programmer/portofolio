@@ -73,9 +73,9 @@ const Bio = () => (
         <Skills skillsData={skillsData} />
       </Section>
 
-      <Section delay={0.5}>
+      {/* <Section delay={0.5}>
         <Experience exeperienceData={exeperienceData} />
-      </Section>
+      </Section> */}
     </Container>
   </Layout>
 );

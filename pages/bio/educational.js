@@ -18,7 +18,7 @@ import {
 const Educational = () => (
   <>
     {" "}
-    <Heading as="h3" fontSize={20} mb={3} mt={4}>
+    <Heading as="h3" fontSize={20} mb={3} mt={10}>
       Educational Background
     </Heading>
     <Table

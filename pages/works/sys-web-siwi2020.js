@@ -1,4 +1,11 @@
-import { Container, Badge, List, ListItem, Link } from "@chakra-ui/react";
+import {
+  Container,
+  Badge,
+  List,
+  ListItem,
+  Link,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import { LockIcon } from "@chakra-ui/icons";
 import { Title, WorkImage, Meta } from "../../components/work";
 import Paragraph from "../../components/paragraph";
@@ -30,7 +37,7 @@ const Work = () => {
           project was formed.
         </Paragraph>
         <WorkImage
-          src="/images/works/inkdrop_01.png"
+          src="/images/works/20siwi20-01.png"
           alt="Sistem Informasi Wisudawan 2020 Admin"
         ></WorkImage>
 
@@ -57,7 +64,7 @@ const Work = () => {
             <Link
               href="https://github.com/mikeyXmomo"
               target={"_blank"}
-              sx={{ color: "white" }}
+              colorScheme={useColorModeValue("red", "gray")}
             >
               <Icon as={GoMarkGithub} /> mikeyXmomo
             </Link>

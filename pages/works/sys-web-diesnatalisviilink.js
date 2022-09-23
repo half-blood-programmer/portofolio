@@ -29,7 +29,7 @@ const Work = () => {
           activity. Therefore, this project was formed.
         </Paragraph>
         <WorkImage
-          src="/images/works/inkdrop_01.png"
+          src="/images/works/22dn7-01.png"
           alt="Dies Natalis VII Link PKN STAN"
         ></WorkImage>
 
