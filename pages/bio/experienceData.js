@@ -1,4 +1,4 @@
-export const exeperienceData = {
+export default exeperienceData = {
   d: {
     title: "Dies Natalis VII PKN STAN",
     year: "2022",

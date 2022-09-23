@@ -1,4 +1,4 @@
-export const statData = [
+export default statData = [
   {
     id: "Web Programing",
     stats: 90,

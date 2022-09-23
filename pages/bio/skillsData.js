@@ -1,4 +1,4 @@
-export const skillsData = [
+export default skillsData = [
   {
     id: "React",
     data: [
