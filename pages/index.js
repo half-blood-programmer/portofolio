@@ -3,7 +3,7 @@ import NextLink from "next/link";
 import Section from "../components/section";
 import Layout from "../components/layouts/article";
 import { connect } from "react-redux";
-import { setAnimate } from "../store/actions/";
+import { setanimate } from "../store/actions/";
 
 const LinkItem = ({ href, children }) => {
   return (
@@ -15,7 +15,7 @@ const LinkItem = ({ href, children }) => {
 
 const Page = (props) => {
   const { path } = props;
-  const { setAnimate } = props;
+  const { setanimate } = props;
 
   return (
     <Layout title="Homepage - Adamjunios">
@@ -28,19 +28,19 @@ const Page = (props) => {
           >
             <b>👋Hey!, I&apos;m Adam and i love to code. </b>
             Here you can find
-            <button type="button" onClick={() => setAnimate("Bio")}>
+            <button type="button" onClick={() => setanimate("Bio")}>
               <LinkItem href="/bio" path={path}>
                 about me
               </LinkItem>
             </button>
             and some of
-            <button type="button" onClick={() => setAnimate("Works")}>
+            <button type="button" onClick={() => setanimate("Works")}>
               <LinkItem href="/works" path={path}>
                 my works
               </LinkItem>
             </button>
             , or maybe you want to
-            <button type="button" onClick={() => setAnimate("Works")}>
+            <button type="button" onClick={() => setanimate("Works")}>
               <LinkItem href="/works" path={path}>
                 discuss
               </LinkItem>
@@ -58,7 +58,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = {
-  setAnimate: setAnimate,
+  setanimate: setanimate,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Page);
