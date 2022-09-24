@@ -7,7 +7,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { connect } from "react-redux";
-import { setAnimate } from "../store/actions/";
+import { setanimate } from "../store/actions/";
 import { IoLogoTwitter } from "react-icons/io";
 import { GoMarkGithub } from "react-icons/go";
 import { AiFillInstagram, AiFillGoogleCircle } from "react-icons/ai";
@@ -92,11 +92,11 @@ const Footer = () => {
 };
 
 const mapStateToProps = (state) => ({
-  animateKey: state.main,
+  animatekey: state.main,
 });
 
 const mapDispatchToProps = {
-  setAnimate: setAnimate,
+  setanimate: setanimate,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Footer);

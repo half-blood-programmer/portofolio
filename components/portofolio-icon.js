@@ -2,12 +2,12 @@ import React, { useState, useEffect, useRef, Suspense } from "react";
 import { Box, Spinner } from "@chakra-ui/react";
 const Spline = React.lazy(() => import("@splinetool/react-spline"));
 import { connect } from "react-redux";
-import { setAnimate } from "../store/actions/";
+import { setanimate } from "../store/actions/";
 
 const PortofolioIcon = (props) => {
   const [animateTrigger, setAnimateTrigger] = useState("blah");
   const spline = useRef();
-  const { animateKey } = props;
+  const { animatekey } = props;
   const [currentAnimation, setCurrentAnimation] = useState("blah");
 
   function onLoad(splineApp) {
@@ -16,8 +16,8 @@ const PortofolioIcon = (props) => {
   }
 
   useEffect(() => {
-    setAnimateTrigger(animateKey.animateKey);
-  }, [animateKey.animateKey]);
+    setAnimateTrigger(animatekey.animatekey);
+  }, [animatekey.animatekey]);
 
   useEffect(() => {
     switch (animateTrigger) {
@@ -108,11 +108,11 @@ const PortofolioIcon = (props) => {
 };
 
 const mapStateToProps = (state) => ({
-  animateKey: state.main,
+  animatekey: state.main,
 });
 
 const mapDispatchToProps = {
-  setAnimate: setAnimate,
+  setanimate: setanimate,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(PortofolioIcon);

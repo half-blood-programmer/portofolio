@@ -9,12 +9,12 @@ import { SunIcon, MoonIcon } from "@chakra-ui/icons";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import { setAnimate } from "../store/actions/";
+import { setanimate } from "../store/actions/";
 
 const ThemeToggleButton = (props) => {
   const { toggleColorMode } = useColorMode();
   const [isChecked, setIsChecked] = useState(false);
-  const { setAnimate } = props;
+  const { setanimate } = props;
 
   useEffect(() => {
     // Perform localStorage action
@@ -32,9 +32,9 @@ const ThemeToggleButton = (props) => {
   const handleChange = () => {
     console.log("Switching theme");
     if (isChecked) {
-      setAnimate("Dark");
+      setanimate("Dark");
     } else {
-      setAnimate("Light");
+      setanimate("Light");
     }
     setIsChecked(!isChecked);
   };
@@ -87,11 +87,11 @@ const ThemeToggleButton = (props) => {
 };
 
 const mapStateToProps = (state) => ({
-  animateKey: state.main,
+  animatekey: state.main,
 });
 
 const mapDispatchToProps = {
-  setAnimate: setAnimate,
+  setanimate: setanimate,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ThemeToggleButton);

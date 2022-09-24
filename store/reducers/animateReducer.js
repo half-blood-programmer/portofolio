@@ -2,14 +2,14 @@ import * as t from "../types";
 
 const animateReducer = (
   state = {
-    animateKey: "blah",
+    animatekey: "blah",
   },
   action
 ) => {
   switch (action.type) {
     case t.SET_ANIMATE:
       return {
-        animateKey: action.payload,
+        animatekey: action.payload,
       };
     default:
       return { ...state };

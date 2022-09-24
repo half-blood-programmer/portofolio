@@ -1,6 +1,6 @@
 import * as t from "../types";
 
-export const setAnimate = (animateKey) => ({
+export const setanimate = (animatekey) => ({
   type: t.SET_ANIMATE,
-  payload: animateKey,
+  payload: animatekey,
 });

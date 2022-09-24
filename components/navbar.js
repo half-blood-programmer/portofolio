@@ -17,7 +17,7 @@ import {
 import { HamburgerIcon } from "@chakra-ui/icons";
 import ThemeToggleButton from "./theme-toggle-button";
 import { connect } from "react-redux";
-import { setAnimate } from "../store/actions/";
+import { setanimate } from "../store/actions/";
 import { TbBrandNextjs } from "react-icons/tb";
 import { GrReactjs } from "react-icons/gr";
 import { SiRedux, SiChakraui } from "react-icons/si";
@@ -25,9 +25,10 @@ import { MdOutlineBarChart } from "react-icons/md";
 import { HiOutlineGlobe } from "react-icons/hi";
 import { Icon } from "@chakra-ui/react";
 import Footer from "./footer";
+
 const Navbar = (props) => {
-  const { path } = props;
-  const { setAnimate } = props;
+  const { path, setanimate } = props;
+  // const { setanimate } = props;
   return (
     <Box
       position="fixed"
@@ -87,7 +88,7 @@ const Navbar = (props) => {
                     mt={1}
                     justifyContent="start"
                     fontSize={18}
-                    onClick={() => setAnimate("Home")}
+                    onClick={() => setanimate("Home")}
                   >
                     Home
                   </MenuItem>
@@ -98,7 +99,7 @@ const Navbar = (props) => {
                     align="right"
                     justifyContent="start"
                     fontSize={18}
-                    onClick={() => setAnimate("Bio")}
+                    onClick={() => setanimate("Bio")}
                   >
                     About Me
                   </MenuItem>
@@ -110,7 +111,7 @@ const Navbar = (props) => {
                     mb={4}
                     justifyContent="start"
                     fontSize={18}
-                    onClick={() => setAnimate("Works")}
+                    onClick={() => setanimate("Works")}
                   >
                     My Works
                   </MenuItem>
@@ -162,11 +163,11 @@ const Navbar = (props) => {
 };
 
 const mapStateToProps = (state) => ({
-  animateKey: state.main,
+  animatekey: state.main,
 });
 
 const mapDispatchToProps = {
-  setAnimate: setAnimate,
+  setanimate: setanimate,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Navbar);

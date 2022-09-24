@@ -4,7 +4,7 @@ import { IconButton } from "@chakra-ui/react";
 import { Icon } from "@chakra-ui/react";
 import { MdSettings, MdHomeFilled } from "react-icons/md";
 import { connect } from "react-redux";
-import { setAnimate } from "../store/actions/";
+import { setanimate } from "../store/actions/";
 
 const LinkItem = ({ href, children }) => {
   return (
@@ -16,7 +16,7 @@ const LinkItem = ({ href, children }) => {
 
 const Logo = (props) => {
   const { path } = props;
-  const { setAnimate } = props;
+  const { setanimate } = props;
   const activeHome = path === "/";
   const activeWorks = path === "/bio" || path === "/" || path === "/works";
 
@@ -35,7 +35,7 @@ const Logo = (props) => {
           variant="outline"
           display={activeHome ? "none" : "inline-block"}
           aria-label="Options"
-          onClick={() => setAnimate("Home")}
+          onClick={() => setanimate("Home")}
           style={{ backdropFilter: "blur(10px)" }}
           colorScheme={useColorModeValue("red", "gray")}
         ></IconButton>
@@ -52,7 +52,7 @@ const Logo = (props) => {
           }
           variant="outline"
           aria-label="Options"
-          onClick={() => setAnimate("Works")}
+          onClick={() => setanimate("Works")}
           style={{ backdropFilter: "blur(10px)" }}
           colorScheme={useColorModeValue("red", "gray")}
         ></IconButton>
@@ -62,11 +62,11 @@ const Logo = (props) => {
 };
 
 const mapStateToProps = (state) => ({
-  animateKey: state.main,
+  animatekey: state.main,
 });
 
 const mapDispatchToProps = {
-  setAnimate: setAnimate,
+  setanimate: setanimate,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Logo);
