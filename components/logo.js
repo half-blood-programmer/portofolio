@@ -28,7 +28,7 @@ const Logo = (props) => {
           icon={
             <Icon
               as={MdHomeFilled}
-              colorScheme={useColorModeValue("red", "gray")}
+              color={useColorModeValue("red", "gray")}
               marginTop={1}
             />
           }
@@ -37,7 +37,7 @@ const Logo = (props) => {
           aria-label="Options"
           onClick={() => setanimate("Home")}
           style={{ backdropFilter: "blur(10px)" }}
-          colorScheme={useColorModeValue("red", "gray")}
+          borderColor={useColorModeValue("red", "gray")}
         ></IconButton>
       </LinkItem>
       <LinkItem href="/works">
@@ -46,7 +46,7 @@ const Logo = (props) => {
           icon={
             <Icon
               as={MdSettings}
-              colorScheme={useColorModeValue("red", "gray")}
+              color={useColorModeValue("red", "gray")}
               marginTop={1}
             />
           }
@@ -54,7 +54,7 @@ const Logo = (props) => {
           aria-label="Options"
           onClick={() => setanimate("Works")}
           style={{ backdropFilter: "blur(10px)" }}
-          colorScheme={useColorModeValue("red", "gray")}
+          borderColor={useColorModeValue("red", "gray")}
         ></IconButton>
       </LinkItem>
     </>

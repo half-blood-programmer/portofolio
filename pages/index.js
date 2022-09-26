@@ -40,10 +40,13 @@ const Page = (props) => {
               </LinkItem>
             </button>
             , or maybe you want to
-            <button type="button" onClick={() => setanimate("Works")}>
-              <LinkItem href="https://mailto:adamjunioselvaa@gmail.com">
-                discuss
-              </LinkItem>
+            <button type="button">
+              <Link
+                href="https://mailto:adamjunioselvaa@gmail.com"
+                target={"_blank"}
+              >
+                &nbsp;discuss&nbsp;
+              </Link>
             </button>
             your project, eh?
           </Heading>

@@ -9,7 +9,28 @@ export const Title = ({ children }) => (
 );
 
 export const WorkImage = ({ src, alt }) => (
-  <Image borderRadius="lg" w="full" src={src} alt={alt} mb={4} mt={4} />
+  <Image
+    borderRadius="lg"
+    w="full"
+    placeholder="blur"
+    loading="lazy"
+    src={src}
+    alt={alt}
+    mt={4}
+  />
+);
+
+export const WorkImageCarousel = ({ src, alt }) => (
+  <Image
+    borderRadius="lg"
+    w="100px"
+    placeholder="blur"
+    loading="lazy"
+    src={src}
+    alt={alt}
+    mb={4}
+    mt={4}
+  />
 );
 
 export const Meta = ({ children }) => (

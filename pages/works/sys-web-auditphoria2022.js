@@ -5,14 +5,47 @@ import {
   ListItem,
   Link,
   useColorModeValue,
+  Flex,
+  Box,
 } from "@chakra-ui/react";
 import { LockIcon } from "@chakra-ui/icons";
-import { Title, WorkImage, Meta } from "../../components/work";
+import {
+  Title,
+  WorkImage,
+  Meta,
+  WorkImageCarousel,
+} from "../../components/work";
 import Paragraph from "../../components/paragraph";
 import Layout from "../../components/layouts/article";
 import { GoMarkGithub } from "react-icons/go";
 import { Icon } from "@chakra-ui/react";
+import { useState } from "react";
+
 const Work = () => {
+  const imageArray = [
+    "22auditphoria-01.png",
+    "22auditphoria-02.png",
+    "22auditphoria-03.png",
+  ];
+
+  const [imageZero, setImageZero] = useState(imageArray[0]);
+  const [imageOne, setImageOne] = useState(imageArray[1]);
+  const [imageTwo, setImageTwo] = useState(imageArray[2]);
+
+  const handleClickOne = () => {
+    let tempImageZero = imageZero;
+    let tempImageOne = imageOne;
+    setImageZero(tempImageOne);
+    setImageOne(tempImageZero);
+  };
+
+  const handleClickTwo = () => {
+    let tempImageZero = imageZero;
+    let tempImageTwo = imageTwo;
+    setImageZero(tempImageTwo);
+    setImageTwo(tempImageZero);
+  };
+
   return (
     <Layout title="Web-based Test Auditphoria3.0">
       <Container>
@@ -39,9 +72,23 @@ const Work = () => {
           Therefore, this project was formed.
         </Paragraph>
         <WorkImage
-          src="/images/works/22auditphoria-01.png"
+          src={`/images/works/${imageZero}`}
           alt="Web-based Test Auditphoria3.0"
         ></WorkImage>
+        <Flex gap={5} mb={5}>
+          <Box onClick={handleClickOne}>
+            <WorkImageCarousel
+              src={`/images/works/${imageOne}`}
+              alt="Web-based Test Auditphoria3.0"
+            ></WorkImageCarousel>
+          </Box>
+          <Box onClick={handleClickTwo}>
+            <WorkImageCarousel
+              src={`/images/works/${imageTwo}`}
+              alt="Web-based Test Auditphoria3.0"
+            ></WorkImageCarousel>
+          </Box>
+        </Flex>
 
         <Paragraph>
           This website displays multi-level links as is usually found in nested

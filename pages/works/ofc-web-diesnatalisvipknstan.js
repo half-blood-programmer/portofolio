@@ -5,13 +5,41 @@ import {
   ListItem,
   Link,
   useColorModeValue,
+  Flex,
+  Box,
 } from "@chakra-ui/react";
-import { Title, WorkImage, Meta } from "../../components/work";
+import {
+  Title,
+  WorkImage,
+  Meta,
+  WorkImageCarousel,
+} from "../../components/work";
 import Paragraph from "../../components/paragraph";
 import Layout from "../../components/layouts/article";
 import { GoMarkGithub } from "react-icons/go";
 import { Icon } from "@chakra-ui/react";
+import { useState } from "react";
+
 const Work = () => {
+  const imageArray = ["21dn6-01.png", "21dn6-02.png", "21dn6-03.png"];
+
+  const [imageZero, setImageZero] = useState(imageArray[0]);
+  const [imageOne, setImageOne] = useState(imageArray[1]);
+  const [imageTwo, setImageTwo] = useState(imageArray[2]);
+
+  const handleClickOne = () => {
+    let tempImageZero = imageZero;
+    let tempImageOne = imageOne;
+    setImageZero(tempImageOne);
+    setImageOne(tempImageZero);
+  };
+
+  const handleClickTwo = () => {
+    let tempImageZero = imageZero;
+    let tempImageTwo = imageTwo;
+    setImageZero(tempImageTwo);
+    setImageTwo(tempImageZero);
+  };
   return (
     <Layout title="Dies Natalis VI-rtual Zone PKN STAN">
       <Container>
@@ -34,9 +62,23 @@ const Work = () => {
           building having its own information.
         </Paragraph>
         <WorkImage
-          src="/images/works/21dn6-01.png"
           alt="Dies Natalis VI-rtual Zone PKN STAN"
+          src={`/images/works/${imageZero}`}
         ></WorkImage>
+        <Flex gap={5} mb={5}>
+          <Box onClick={handleClickOne}>
+            <WorkImageCarousel
+              src={`/images/works/${imageOne}`}
+              alt="Dies Natalis VI-rtual Zone PKN STAN"
+            ></WorkImageCarousel>
+          </Box>
+          <Box onClick={handleClickTwo}>
+            <WorkImageCarousel
+              src={`/images/works/${imageTwo}`}
+              alt="Dies Natalis VI-rtual Zone PKN STAN"
+            ></WorkImageCarousel>
+          </Box>
+        </Flex>
 
         <Paragraph>
           This website aims to invite students to feel like returning to campus,

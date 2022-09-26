@@ -1,10 +1,43 @@
-import { Container, Badge, List, ListItem, Link } from "@chakra-ui/react";
+import {
+  Container,
+  Badge,
+  List,
+  ListItem,
+  Link,
+  Box,
+  Flex,
+} from "@chakra-ui/react";
 import { LockIcon } from "@chakra-ui/icons";
-import { Title, WorkImage, Meta } from "../../components/work";
+import {
+  Title,
+  WorkImage,
+  Meta,
+  WorkImageCarousel,
+} from "../../components/work";
 import Paragraph from "../../components/paragraph";
 import Layout from "../../components/layouts/article";
+import { useState } from "react";
 
 const Work = () => {
+  const imageArray = ["22dn7-01.png", "22dn7-02.png", "22dn7-03.png"];
+
+  const [imageZero, setImageZero] = useState(imageArray[0]);
+  const [imageOne, setImageOne] = useState(imageArray[1]);
+  const [imageTwo, setImageTwo] = useState(imageArray[2]);
+
+  const handleClickOne = () => {
+    let tempImageZero = imageZero;
+    let tempImageOne = imageOne;
+    setImageZero(tempImageOne);
+    setImageOne(tempImageZero);
+  };
+
+  const handleClickTwo = () => {
+    let tempImageZero = imageZero;
+    let tempImageTwo = imageTwo;
+    setImageZero(tempImageTwo);
+    setImageTwo(tempImageZero);
+  };
   return (
     <Layout title="Dies Natalis VII Link PKN STAN">
       <Container>
@@ -29,9 +62,23 @@ const Work = () => {
           activity. Therefore, this project was formed.
         </Paragraph>
         <WorkImage
-          src="/images/works/22dn7-01.png"
+          src={`/images/works/${imageZero}`}
           alt="Dies Natalis VII Link PKN STAN"
         ></WorkImage>
+        <Flex gap={5} mb={5}>
+          <Box onClick={handleClickOne}>
+            <WorkImageCarousel
+              src={`/images/works/${imageOne}`}
+              alt="Dies Natalis VII Link PKN STAN"
+            ></WorkImageCarousel>
+          </Box>
+          <Box onClick={handleClickTwo}>
+            <WorkImageCarousel
+              src={`/images/works/${imageTwo}`}
+              alt="Dies Natalis VII Link PKN STAN"
+            ></WorkImageCarousel>
+          </Box>
+        </Flex>
 
         <Paragraph>
           This website displays multi-level links as is usually found in nested
