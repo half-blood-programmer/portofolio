@@ -28,22 +28,13 @@ import Footer from "./footer";
 
 const Navbar = (props) => {
   const { path, setanimate } = props;
-  // const { setanimate } = props;
   return (
     <Box
       position="fixed"
       as="nav"
       w="100%"
       bg={"transparent"}
-      backdropFilter={{
-        base: "none",
-        xl: "none",
-        md: "none",
-        sm: "blur(10px)",
-      }}
-      // style={{ md: { backdropFilter: "blur(10px)" } }}
-      // borderColor={useColorModeValue("transparent", "#ffffff40")}
-      // boxShadow="sm"
+      backdropFilter={["blur(10px)", "none", "none"]}
       zIndex={1}
       {...props}
     >

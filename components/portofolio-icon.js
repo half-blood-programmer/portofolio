@@ -1,9 +1,14 @@
 import React, { useState, useEffect, useRef, Suspense } from "react";
 import { Box, Spinner } from "@chakra-ui/react";
-const Spline = React.lazy(() => import("@splinetool/react-spline"));
 import { connect } from "react-redux";
 import { setanimate } from "../store/actions/";
 
+const Spline = React.lazy(() => {
+  return Promise.all([
+    import("@splinetool/react-spline"),
+    new Promise((resolve) => setTimeout(resolve, 3000)),
+  ]).then(([moduleExports]) => moduleExports);
+});
 const PortofolioIcon = (props) => {
   const [animateTrigger, setAnimateTrigger] = useState("blah");
   const spline = useRef();
@@ -80,10 +85,10 @@ const PortofolioIcon = (props) => {
     <Box
       className="potofolio-icon"
       m="auto"
-      mt={["-20px", "-60px", "-120px"]}
-      mb={["-40px", "-140px", "-200px"]}
-      w={[280, 640, 800]}
-      h={[280, 600, 640]}
+      mt={["0px", "-60px", "-120px"]}
+      mb={["0px", "-140px", "-200px"]}
+      w={[380, 600, 760]}
+      h={[420, 420, 640]}
       position="relative"
     >
       <Suspense
