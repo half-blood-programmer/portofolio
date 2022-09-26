@@ -16,6 +16,18 @@ export const WorkImage = ({ src, alt }) => (
     loading="lazy"
     src={src}
     alt={alt}
+    mt={4}
+  />
+);
+
+export const WorkImageCarousel = ({ src, alt }) => (
+  <Image
+    borderRadius="lg"
+    w="100px"
+    placeholder="blur"
+    loading="lazy"
+    src={src}
+    alt={alt}
     mb={4}
     mt={4}
   />
