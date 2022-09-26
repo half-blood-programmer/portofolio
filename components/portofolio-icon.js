@@ -14,6 +14,7 @@ const PortofolioIcon = (props) => {
   const spline = useRef();
   const { animatekey } = props;
   const [currentAnimation, setCurrentAnimation] = useState("blah");
+  const [currentAnimationRotate, setCurrentAnimationRotate] = useState(false);
 
   function onLoad(splineApp) {
     // save the app in a ref for later use
@@ -27,9 +28,11 @@ const PortofolioIcon = (props) => {
   useEffect(() => {
     switch (animateTrigger) {
       case "Bio":
+        clearAnimation();
         triggerAnimationBio();
         break;
       case "Works":
+        clearAnimation();
         triggerAnimationWorks();
         break;
       case "Light":
@@ -44,15 +47,30 @@ const PortofolioIcon = (props) => {
     }
   }, [animateTrigger]);
 
+  function triggerAnimationRotate() {
+    if (currentAnimationRotate) {
+      spline.current.emitEventReverse("keyDown", "Group");
+    } else {
+      spline.current.emitEvent("keyDown", "Group");
+    }
+    console.log("animation rotate is run");
+  }
+
   function triggerAnimationBio() {
     spline.current.emitEvent("keyDown", "Headfull");
     setCurrentAnimation("Bio");
+    // triggerAnimationRotate();
+
+    // setCurrentAnimationRotate(!currentAnimationRotate);
     console.log("animation for Bio is run");
   }
 
   function triggerAnimationWorks() {
     spline.current.emitEvent("keyDown", "computer");
     setCurrentAnimation("Works");
+    // triggerAnimationRotate();
+
+    // setCurrentAnimationRotate(!currentAnimationRotate);
     console.log("animation for Works is run");
   }
 
@@ -66,16 +84,17 @@ const PortofolioIcon = (props) => {
     console.log("is going to light");
   }
   function clearAnimation() {
+    console.log(currentAnimation);
     switch (currentAnimation) {
       case "Bio":
         spline.current.emitEventReverse("keyDown", "Headfull");
-
         break;
       case "Works":
         spline.current.emitEventReverse("keyDown", "computer");
-
         break;
     }
+    triggerAnimationRotate();
+    setCurrentAnimationRotate(!currentAnimationRotate);
 
     setCurrentAnimation("blah");
     console.log("all animation is back to base state");
