@@ -13,7 +13,7 @@ import Layout from "../components/layouts/article";
 
 const Works = () => {
   return (
-    <Layout title="Works">
+    <Layout title="Works - AdamjunioS">
       <Container>
         <Heading as="h3" fontSize={26} mb={6}>
           My Project Experiences
