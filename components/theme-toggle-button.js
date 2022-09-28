@@ -9,12 +9,19 @@ import { SunIcon, MoonIcon } from "@chakra-ui/icons";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import { setanimate } from "../store/actions/";
+import { setanimate, setloadanimate } from "../store/actions/";
 
 const ThemeToggleButton = (props) => {
   const { toggleColorMode } = useColorMode();
   const [isChecked, setIsChecked] = useState(false);
-  const { setanimate } = props;
+  const { setanimate, loadanima } = props;
+  const [isLoading, setIsLoading] = useState("loading");
+
+  useEffect(() => {
+    setIsLoading(loadanima.loadanima);
+  }, [loadanima.loadanima]);
+
+  console.log(isLoading);
 
   useEffect(() => {
     // Perform localStorage action
@@ -32,9 +39,13 @@ const ThemeToggleButton = (props) => {
   const handleChange = () => {
     console.log("Switching theme");
     if (isChecked) {
-      setanimate("Dark");
+      if (isLoading === "complete") {
+        setanimate("Dark");
+      }
     } else {
-      setanimate("Light");
+      if (isLoading === "complete") {
+        setanimate("Light");
+      }
     }
     setIsChecked(!isChecked);
   };
@@ -88,10 +99,12 @@ const ThemeToggleButton = (props) => {
 
 const mapStateToProps = (state) => ({
   animatekey: state.main,
+  loadanima: state.load,
 });
 
 const mapDispatchToProps = {
   setanimate: setanimate,
+  setloadanimate: setloadanimate,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ThemeToggleButton);

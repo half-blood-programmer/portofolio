@@ -1,26 +1,36 @@
 import React, { useState, useEffect, useRef, Suspense } from "react";
-import { Box, Spinner } from "@chakra-ui/react";
+import { Box, Heading, Spinner } from "@chakra-ui/react";
 import { connect } from "react-redux";
-import { setanimate } from "../store/actions/";
+import { setanimate, setloadanimate } from "../store/actions/";
+import nprogress from "nprogress";
 
 const Spline = React.lazy(() => {
+  nprogress.start();
   return Promise.all([
     import("@splinetool/react-spline"),
-    new Promise((resolve) => setTimeout(resolve, 3000)),
-  ]).then(([moduleExports]) => moduleExports);
+    new Promise((resolve) => {
+      setTimeout(resolve, 3000);
+    }),
+  ]).then(([moduleExports]) => {
+    nprogress.done();
+    return moduleExports;
+  });
 });
+
 const PortofolioIcon = (props) => {
   const [animateTrigger, setAnimateTrigger] = useState("blah");
   const spline = useRef();
-  const { animatekey } = props;
+  const { animatekey, setloadanimate } = props;
   const [currentAnimation, setCurrentAnimation] = useState("blah");
   const [currentAnimationRotate, setCurrentAnimationRotate] = useState(false);
 
   function onLoad(splineApp) {
     // save the app in a ref for later use
     spline.current = splineApp;
-  }
 
+    setloadanimate("complete");
+    console.log("animation is completed load");
+  }
   useEffect(() => {
     setAnimateTrigger(animatekey.animatekey);
   }, [animatekey.animatekey]);
@@ -100,26 +110,40 @@ const PortofolioIcon = (props) => {
     console.log("all animation is back to base state");
   }
 
+  console.log("welcome to adamjunios.space");
+
   return (
     <Box
       className="potofolio-icon"
       m="auto"
-      mt={["0px", "-60px", "-120px"]}
-      mb={["0px", "-140px", "-200px"]}
-      w={[380, 600, 760]}
-      h={[420, 420, 640]}
+      mt={["-20px", "-60px", "-120px"]}
+      mb={["-20px", "-140px", "-200px"]}
+      w={[320, 600, 760]}
+      h={[380, 420, 640]}
       position="relative"
     >
       <Suspense
         fallback={
-          <Spinner
-            size="xl"
-            position="absolute"
-            left="50%"
-            top="50%"
-            ml="calc(0px - var(--spinner-size)/2)"
-            mt="calc(0px - var(--spinner-size))"
-          ></Spinner>
+          <>
+            <Spinner
+              size="xl"
+              position="absolute"
+              left="50%"
+              top="50%"
+              ml="calc(0px - var(--spinner-size)/2)"
+              mt="calc(0px - var(--spinner-size))"
+            ></Spinner>
+            <Heading
+              variant="section-title"
+              position={"absolute"}
+              bottom={"20"}
+              left={"0"}
+              right={"0"}
+              textAlign={"center"}
+            >
+              Loading animation...
+            </Heading>
+          </>
         }
       >
         <Spline
@@ -133,10 +157,12 @@ const PortofolioIcon = (props) => {
 
 const mapStateToProps = (state) => ({
   animatekey: state.main,
+  loadanima: state.load,
 });
 
 const mapDispatchToProps = {
   setanimate: setanimate,
+  setloadanimate: setloadanimate,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(PortofolioIcon);
