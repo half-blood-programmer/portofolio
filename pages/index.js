@@ -26,7 +26,7 @@ const Page = (props) => {
             variant="index-title"
             sx={{ fontWeight: "500", lineHeight: 1.6 }}
           >
-            <b>👋Hey!, I&apos;m Adam and i love to code. </b>
+            <b>👋Yo! I&apos;m Adam and i love to code. </b>
             Here you can find
             <button type="button" onClick={() => setanimate("Bio")}>
               <LinkItem href="/bio" path={path}>

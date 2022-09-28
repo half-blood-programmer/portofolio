@@ -5,6 +5,9 @@ import PortofolioIcon from "../portofolio-icon";
 import NoSsr from "../no-ssr.js";
 import Router from "next/router";
 import nprogress from "nprogress";
+import { connect } from "react-redux";
+import { setloadanimate } from "../../store/actions/";
+import { useEffect, useState } from "react";
 
 nprogress.configure({
   showSpinner: false,
@@ -25,26 +28,44 @@ Router.onRouteChangeError = (url) => {
   nprogress.done();
 };
 
-const Main = ({ children, router }) => {
-  console.log("welcome to adamjunios.space");
+const Main = (props) => {
+  const { loadanima, children, router } = props;
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    setIsLoading(loadanima.loadanima);
+  }, [loadanima.loadanima]);
+
   return (
     <Box as="main" pb={8}>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Adamjunios</title>
       </Head>
-
       <Navbar path={router.asPath} />
 
-      <Container maxW="container.md" pt={14}>
-        <NoSsr>
+      <NoSsr>
+        <Container maxW="container.xl" pt={40}>
           <PortofolioIcon />
-        </NoSsr>
-
+        </Container>
+      </NoSsr>
+      <Container
+        maxW="container.md"
+        pt={14}
+        display={isLoading === "complete" ? "display" : "none"}
+      >
         {children}
       </Container>
     </Box>
   );
 };
 
-export default Main;
+const mapStateToProps = (state) => ({
+  loadanima: state.load,
+});
+
+const mapDispatchToProps = {
+  setloadanimate: setloadanimate,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Main);

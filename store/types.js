@@ -1,1 +1,2 @@
 export const SET_ANIMATE = "SET_ANIMATE";
+export const SET_LOADANIMATE = "SET_LOADANIMATE";
