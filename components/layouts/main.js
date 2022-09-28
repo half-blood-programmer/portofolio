@@ -45,7 +45,7 @@ const Main = (props) => {
       <Navbar path={router.asPath} />
 
       <NoSsr>
-        <Container maxW="container.xl" pt={40}>
+        <Container maxW="container.xl" pt={[20, 5, 5]}>
           <PortofolioIcon />
         </Container>
       </NoSsr>

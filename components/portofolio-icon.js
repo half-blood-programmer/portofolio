@@ -116,7 +116,7 @@ const PortofolioIcon = (props) => {
     <Box
       className="potofolio-icon"
       m="auto"
-      mt={["-20px", "-60px", "-120px"]}
+      mt={["-20px", "-60px", "-100px"]}
       mb={["-20px", "-140px", "-200px"]}
       w={[320, 600, 760]}
       h={[380, 420, 640]}

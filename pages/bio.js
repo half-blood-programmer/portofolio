@@ -11,7 +11,7 @@ import statData from "../lib/statData";
 import Educational from "./bio/educational";
 
 const Bio = () => (
-  <Layout title="Bio">
+  <Layout title="Bio - Adamjunios">
     <Container>
       <Section delay={0.1}>
         <Heading

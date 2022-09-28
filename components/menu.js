@@ -16,7 +16,7 @@ import { connect } from "react-redux";
 import { setanimate, setloadanimate } from "../store/actions/";
 import { TbBrandNextjs } from "react-icons/tb";
 import { GrReactjs } from "react-icons/gr";
-import { SiRedux, SiChakraui } from "react-icons/si";
+import { SiRedux, SiChakraui, SiVercel } from "react-icons/si";
 import { MdOutlineBarChart } from "react-icons/md";
 import { HiOutlineGlobe } from "react-icons/hi";
 import { Icon } from "@chakra-ui/react";
@@ -100,6 +100,10 @@ const MenuSet = (props) => {
               |{" "}
               <Link href="https://redux.js.org/" target={"_blank"}>
                 <Icon as={SiRedux} /> Redux
+              </Link>{" "}
+              |{" "}
+              <Link href="https://vercel.com/" target={"_blank"}>
+                <Icon as={SiVercel} /> Vercel
               </Link>
             </Text>
             <Text px={2} fontSize={11} textAlign={"center"}>
