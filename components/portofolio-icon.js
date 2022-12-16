@@ -8,9 +8,9 @@ const Spline = React.lazy(() => {
   nprogress.start();
   return Promise.all([
     import("@splinetool/react-spline"),
-    new Promise((resolve) => {
-      setTimeout(resolve, 3000);
-    }),
+    // new Promise((resolve) => {
+    //   setTimeout(resolve, 3000);
+    // }),
   ]).then(([moduleExports]) => {
     nprogress.done();
     return moduleExports;
@@ -147,7 +147,8 @@ const PortofolioIcon = (props) => {
         }
       >
         <Spline
-          scene="https://prod.spline.design/Fja4yvOJyNqnhjB8/scene.splinecode"
+          // scene="https://prod.spline.design/aXwFM3iYJgvwJ3ED/scene.splinecode"
+          scene="https://draft.spline.design/VASgCcHhJsnMH35n/scene.splinecode"
           onLoad={onLoad}
         />
       </Suspense>
