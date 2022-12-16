@@ -31,7 +31,7 @@ const Educational = () => (
         </Tr>
         <Tr>
           <Td fontSize={12} pl={1} borderBottom={"none"}>
-            Completed study on time in 2022, with GPA score 3,67
+            Completed study on time in 2022, with GPA score 3,64
           </Td>
         </Tr>
       </Tbody>

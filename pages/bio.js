@@ -1,4 +1,11 @@
-import { Container, Heading } from "@chakra-ui/react";
+import {
+  Container,
+  Heading,
+  Button,
+  Link,
+  useColorModeValue,
+  Text,
+} from "@chakra-ui/react";
 import Layout from "../components/layouts/article";
 import Section from "../components/section";
 import Paragraph from "../components/paragraph";
@@ -9,7 +16,6 @@ import Statistic from "./bio/stat";
 import skillsData from "../lib/skillsData";
 import statData from "../lib/statData";
 import Educational from "./bio/educational";
-
 const Bio = () => (
   <Layout title="Bio - Adamjunios">
     <Container>
@@ -53,6 +59,22 @@ const Bio = () => (
 
       <Section delay={0.4}>
         <Skills skillsData={skillsData} />
+      </Section>
+
+      <Section delay={0.4}>
+        <Text px={2} py={5} textAlign={"center"}>
+          <Link
+            href="https://drive.google.com/file/d/1tmEt48HOlbFkIWhdO8fttgTccgUYZcKZ/view?usp=share_link"
+            target={"_blank"}
+          >
+            <Button
+              variant="outline"
+              borderColor={useColorModeValue("red", "gray")}
+            >
+              My portofolio in other verse
+            </Button>
+          </Link>{" "}
+        </Text>
       </Section>
     </Container>
   </Layout>
