@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, Suspense } from "react";
-import { Box, Heading, Spinner } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import { connect } from "react-redux";
 import { setanimate, setloadanimate } from "../store/actions/";
 import nprogress from "nprogress";
@@ -93,6 +93,7 @@ const PortofolioIcon = (props) => {
     spline.current.emitEventReverse("keyDown", "Point Light");
     console.log("is going to light");
   }
+
   function clearAnimation() {
     console.log(currentAnimation);
     switch (currentAnimation) {
@@ -122,30 +123,7 @@ const PortofolioIcon = (props) => {
       h={[380, 420, 640]}
       position="relative"
     >
-      <Suspense
-        fallback={
-          <>
-            <Spinner
-              size="xl"
-              position="absolute"
-              left="50%"
-              top="50%"
-              ml="calc(0px - var(--spinner-size)/2)"
-              mt="calc(0px - var(--spinner-size))"
-            ></Spinner>
-            <Heading
-              variant="section-title"
-              position={"absolute"}
-              bottom={"20"}
-              left={"0"}
-              right={"0"}
-              textAlign={"center"}
-            >
-              Loading animation...
-            </Heading>
-          </>
-        }
-      >
+      <Suspense>
         <Spline
           // scene="https://prod.spline.design/aXwFM3iYJgvwJ3ED/scene.splinecode"
           scene="https://draft.spline.design/VASgCcHhJsnMH35n/scene.splinecode"

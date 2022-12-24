@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Box, Container } from "@chakra-ui/react";
+import { Box, Container, Heading, Spinner } from "@chakra-ui/react";
 import Navbar from "../navbar.js";
 import PortofolioIcon from "../portofolio-icon";
 import NoSsr from "../no-ssr.js";
@@ -45,6 +45,30 @@ const Main = (props) => {
       <Navbar path={router.asPath} />
 
       <NoSsr>
+        <Container
+          maxW="container.md"
+          pt={14}
+          display={isLoading === "complete" ? "none" : "display"}
+        >
+          <Spinner
+            size="xl"
+            position="absolute"
+            left="50%"
+            top="50%"
+            ml="calc(0px - var(--spinner-size)/2)"
+            mt="calc(0px - var(--spinner-size))"
+          ></Spinner>
+          <Heading
+            variant="section-title"
+            position={"absolute"}
+            bottom={"20"}
+            left={"0"}
+            right={"0"}
+            textAlign={"center"}
+          >
+            Loading animation...
+          </Heading>
+        </Container>
         <Container maxW="container.xl" pt={[20, 5, 5]}>
           <PortofolioIcon />
         </Container>

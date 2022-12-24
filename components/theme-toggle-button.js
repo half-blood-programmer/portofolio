@@ -38,12 +38,10 @@ const ThemeToggleButton = (props) => {
 
   const handleChange = () => {
     console.log("Switching theme");
-    if (isChecked) {
-      if (isLoading === "complete") {
+    if (isLoading === "complete") {
+      if (isChecked) {
         setanimate("Dark");
-      }
-    } else {
-      if (isLoading === "complete") {
+      } else {
         setanimate("Light");
       }
     }
