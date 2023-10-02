@@ -103,7 +103,7 @@ const Work = () => {
           <ListItem>
             <Meta>Source</Meta>
             <Link
-              href="https://github.com/adamjunios/dies-natalis-vi-rtual-zone-2021"
+              href="https://github.com/half-blood-programmer/dies-natalis-vi-rtual-zone-2021"
               target={"_blank"}
               colorScheme={useColorModeValue("red", "gray")}
             >

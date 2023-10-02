@@ -47,7 +47,7 @@ const Footer = () => {
         </MenuItem>
         <MenuItem justifyContent={"start"}>
           <Link
-            href="https://github.com/adamjunios"
+            href="https://github.com/half-blood-programmer"
             target={"_blank"}
             display={"flex"}
             alignItems={"end"}
