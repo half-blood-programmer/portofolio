@@ -94,10 +94,10 @@ const MenuSet = (props) => {
                 <Icon as={TbBrandNextjs} /> Nextjs
               </Link>{" "}
               |{" "}
-              <Link href="https://reactjs.org/" target={"_blank"}>
+              {/* <Link href="https://reactjs.org/" target={"_blank"}>
                 <Icon as={GrReactjs} /> Reactjs
               </Link>{" "}
-              |{" "}
+              |{" "} */}
               <Link href="https://redux.js.org/" target={"_blank"}>
                 <Icon as={SiRedux} /> Redux
               </Link>{" "}

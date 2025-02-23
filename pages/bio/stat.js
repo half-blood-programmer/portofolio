@@ -28,7 +28,7 @@ const Statistic = ({ statData }) => (
         sliceTooltip="id"
       />
     </Box>
-    <Paragraph>
+    <Paragraph style={{ marginTop: 20 }}>
       <b>The radar above is not a constellation</b>, but a representation of the
       skills I have. Yes, apart from web programming, I also have other skills
       of course ...

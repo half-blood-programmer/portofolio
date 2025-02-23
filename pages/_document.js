@@ -11,6 +11,11 @@ export default class Document extends NextDocument {
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css"
           />
+          <link
+            rel="icon"
+            type="image/png"
+            href="/images/logo-adamjunios.png"
+          />
         </Head>
         <body>
           <ColorModeScript initialColorMode={theme.config.initialColorMode} />

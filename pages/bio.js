@@ -53,6 +53,7 @@ const Bio = () => (
       <Section delay={0.3}>
         <Statistic statData={statData} />
       </Section>
+
       <Section delay={0.3}>
         <Educational />
       </Section>
