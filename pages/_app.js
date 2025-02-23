@@ -4,9 +4,16 @@ import Layout from "../components/layouts/main";
 import theme from "../lib/theme";
 import { AnimatePresence } from "framer-motion";
 import { wrapper } from "../store/store";
+import Script from "next/script";
 
 const Website = ({ Component, pageProps, router }) => (
   <ChakraProvider theme={theme}>
+    {/* Umami Analytics */}
+    <Script
+      defer
+      src="https://cloud.umami.is/script.js"
+      data-website-id="483056d8-45cc-49ce-b83d-4a35c235d235"
+    />
     <Fonts />
     <Layout router={router}>
       <AnimatePresence exitBeforeEnter initial={true}>
