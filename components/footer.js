@@ -20,9 +20,10 @@ const Footer = () => {
         display={{ base: "inline-block" }}
         style={{ backdropFilter: "blur(10px)" }}
         mb={6}
+        mt={8}
       >
         <Heading
-          as="h6"
+          as="h4"
           size="md"
           p={1}
           fontSize={18}
@@ -41,8 +42,8 @@ const Footer = () => {
             textDecoration={"none"}
             color={useColorModeValue("gray.500", "white")}
           >
-            <Icon as={AiFillGoogleCircle} fontSize={22} />
-            <Text> adamjunioselvaa</Text>
+            <Icon as={AiFillGoogleCircle} fontSize={16} />
+            <Text fontSize={12}> adamjunioselvaa</Text>
           </Link>
         </MenuItem>
         <MenuItem justifyContent={"start"}>
@@ -55,8 +56,8 @@ const Footer = () => {
             textDecoration={"none"}
             color={useColorModeValue("gray.500", "white")}
           >
-            <Icon as={GoMarkGithub} fontSize={22} />
-            <Text> adamjunios</Text>
+            <Icon as={GoMarkGithub} fontSize={16} />
+            <Text fontSize={12}> adamjunios</Text>
           </Link>
         </MenuItem>
         <MenuItem justifyContent={"start"}>
@@ -70,7 +71,8 @@ const Footer = () => {
             color={useColorModeValue("gray.500", "white")}
           >
             {" "}
-            <Icon as={AiFillInstagram} fontSize={22} /> adamjunios
+            <Icon as={AiFillInstagram} fontSize={16} />{" "}
+            <Text fontSize={12}>adamjunios</Text>
           </Link>{" "}
         </MenuItem>
         <MenuItem justifyContent={"start"}>
@@ -83,7 +85,8 @@ const Footer = () => {
             textDecoration={"none"}
             color={useColorModeValue("gray.500", "white")}
           >
-            <Icon as={IoLogoTwitter} fontSize={22} /> adamjunios
+            <Icon as={IoLogoTwitter} fontSize={16} />
+            <Text fontSize={12}>adamjunios</Text>
           </Link>{" "}
         </MenuItem>
       </Box>

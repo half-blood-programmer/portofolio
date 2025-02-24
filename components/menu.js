@@ -17,7 +17,12 @@ import { setanimate, setloadanimate } from "../store/actions/";
 import { TbBrandNextjs } from "react-icons/tb";
 import { GrReactjs } from "react-icons/gr";
 import { SiRedux, SiChakraui, SiVercel } from "react-icons/si";
-import { MdOutlineBarChart } from "react-icons/md";
+import {
+  MdOutlineBarChart,
+  MdSettings,
+  MdHomeFilled,
+  MdPerson,
+} from "react-icons/md";
 import { HiOutlineGlobe } from "react-icons/hi";
 import { Icon } from "@chakra-ui/react";
 import Footer from "./footer";
@@ -52,7 +57,7 @@ const MenuSet = (props) => {
                 fontSize={18}
                 onClick={() => setanimate("Home")}
               >
-                Home
+                <Icon as={MdHomeFilled} mr={2} fontSize={22} /> Home
               </MenuItem>
             </NextLink>
             <NextLink href="/bio" passHref>
@@ -63,6 +68,7 @@ const MenuSet = (props) => {
                 fontSize={18}
                 onClick={() => setanimate("Bio")}
               >
+                <Icon as={MdPerson} mr={2} fontSize={22} />
                 About Me
               </MenuItem>
             </NextLink>
@@ -75,6 +81,7 @@ const MenuSet = (props) => {
                 fontSize={18}
                 onClick={() => setanimate("Works")}
               >
+                <Icon as={MdSettings} mr={2} fontSize={22} />
                 My Works
               </MenuItem>
             </NextLink>
@@ -84,12 +91,12 @@ const MenuSet = (props) => {
               as="h6"
               size="md"
               p={2}
-              fontSize={14}
+              fontSize={10}
               letterSpacing={"tighter"}
             >
               This web is using
             </Heading>
-            <Text px={2} fontSize={11} textAlign={"center"}>
+            <Text px={2} fontSize={8} textAlign={"center"}>
               <Link href="https://nextjs.org/" target={"_blank"}>
                 <Icon as={TbBrandNextjs} /> Nextjs
               </Link>{" "}
@@ -106,7 +113,7 @@ const MenuSet = (props) => {
                 <Icon as={SiVercel} /> Vercel
               </Link>
             </Text>
-            <Text px={2} fontSize={11} textAlign={"center"}>
+            <Text px={2} fontSize={8} textAlign={"center"}>
               <Link href="https://chakra-ui.com/" target={"_blank"}>
                 <Icon as={SiChakraui} /> ChakraUI
               </Link>{" "}
