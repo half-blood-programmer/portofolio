@@ -8,6 +8,7 @@ import pic21dn601 from "../public/images/works/21dn6-01.png";
 import pic21siwi2101 from "../public/images/works/21siwi21-01.png";
 import pic22auditphoria01 from "../public/images/works/22auditphoria-01.png";
 import pic22dn701 from "../public/images/works/22dn7-01.png";
+import pic23just01 from "../public/images/works/23just-01.png";
 
 import Layout from "../components/layouts/article";
 
@@ -19,6 +20,17 @@ const Works = () => {
           My Project Experiences
         </Heading>
         <SimpleGrid columns={[1, 2, 2]} gap={6}>
+          <Section>
+            <WorkGridItem
+              id="si-web-just-sitp"
+              title="Just (Tinjau Surat Tugas) SITP"
+              thumbnail={pic23just01}
+            >
+              An information system that streamlines the management, tracking,
+              and analysis of employee tasks based on Employee Assignment
+              Letters (Surat Tugas/ST)
+            </WorkGridItem>
+          </Section>
           <Section>
             <WorkGridItem
               id="sys-web-diesnatalisviilink"

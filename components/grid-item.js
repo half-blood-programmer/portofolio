@@ -25,12 +25,15 @@ export const WorkGridItem = ({ children, id, title, href, thumbnail }) => (
   <Box w="100%" align="center">
     <NexLink href={`/works/${id}`}>
       <LinkBox cursor="pointer">
-        <Image
-          src={thumbnail}
-          alt={title}
-          className="grid-item-thumbnail"
-          placeholder="blur"
-        />
+        <Box position="relative" width="100%" height="140px" overflow="hidden">
+          <Image
+            src={thumbnail}
+            alt={title}
+            layout="fill"
+            objectFit="cover" // Ensures it fills the area while maintaining aspect ratio
+            className="grid-item-thumbnail"
+          />
+        </Box>
         <LinkOverlay href={href} target="_blank">
           <Text m={2} fontSize={20}>
             {title}
