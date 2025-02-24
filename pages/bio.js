@@ -62,7 +62,7 @@ const Bio = () => (
         <Skills skillsData={skillsData} />
       </Section>
 
-      <Section delay={0.4}>
+      {/* <Section delay={0.4}>
         <Text px={2} py={5} textAlign={"center"}>
           <Link
             href="https://drive.google.com/file/d/1tmEt48HOlbFkIWhdO8fttgTccgUYZcKZ/view?usp=share_link"
@@ -76,7 +76,7 @@ const Bio = () => (
             </Button>
           </Link>{" "}
         </Text>
-      </Section>
+      </Section> */}
     </Container>
   </Layout>
 );
