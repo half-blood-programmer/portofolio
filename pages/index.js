@@ -41,10 +41,7 @@ const Page = (props) => {
             </button>
             , or maybe you want to
             <button type="button">
-              <Link
-                href="https://mailto:adamjunioselvaa@gmail.com"
-                target={"_blank"}
-              >
+              <Link href="https://instagram.com/adamjunios" target={"_blank"}>
                 &nbsp;discuss&nbsp;
               </Link>
             </button>

@@ -11,6 +11,7 @@ import pic22dn701 from "../public/images/works/22dn7-01.png";
 import pic23just01 from "../public/images/works/23just-01.png";
 import pic23tdd01 from "../public/images/works/23tdd-01.png";
 import pic23simonalisa01 from "../public/images/works/23simonalisa-01.png";
+import pic24topiterang01 from "../public/images/works/24topiterang-01.png";
 
 import Layout from "../components/layouts/article";
 
@@ -22,6 +23,16 @@ const Works = () => {
           My Project Experiences
         </Heading>
         <SimpleGrid columns={[1, 2, 2]} gap={6}>
+          <Section>
+            <WorkGridItem
+              id="si-web-topiterang"
+              title="Topi Terang"
+              thumbnail={pic24topiterang01}
+            >
+              An interactive visualization tool designed to evaluate the
+              effectiveness of education spending in Indonesia.
+            </WorkGridItem>
+          </Section>
           <Section>
             <WorkGridItem
               id="si-web-simonalisa"
