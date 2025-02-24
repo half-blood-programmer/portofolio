@@ -9,6 +9,8 @@ import pic21siwi2101 from "../public/images/works/21siwi21-01.png";
 import pic22auditphoria01 from "../public/images/works/22auditphoria-01.png";
 import pic22dn701 from "../public/images/works/22dn7-01.png";
 import pic23just01 from "../public/images/works/23just-01.png";
+import pic23tdd01 from "../public/images/works/23tdd-01.png";
+import pic23simonalisa01 from "../public/images/works/23simonalisa-01.png";
 
 import Layout from "../components/layouts/article";
 
@@ -20,6 +22,28 @@ const Works = () => {
           My Project Experiences
         </Heading>
         <SimpleGrid columns={[1, 2, 2]} gap={6}>
+          <Section>
+            <WorkGridItem
+              id="si-web-simonalisa"
+              title="Si Monalisa"
+              thumbnail={pic23simonalisa01}
+            >
+              Dashboard analyzes KPPN Nabire's spending behavior with visualized
+              data on expenditures, categories, and transactions for budget
+              evaluation.
+            </WorkGridItem>
+          </Section>
+          <Section>
+            <WorkGridItem
+              id="si-web-dashboardtdd"
+              title="Dashboard Kondisi Ekonomi Regional"
+              thumbnail={pic23tdd01}
+            >
+              Web-based platform designed to present and analyze regional
+              conditions by visualizing key data indicators across various
+              sectors
+            </WorkGridItem>
+          </Section>
           <Section>
             <WorkGridItem
               id="si-web-just-sitp"
