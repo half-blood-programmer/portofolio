@@ -42,11 +42,12 @@ const Bio = () => (
         <Paragraph>
           [noun]
           <Icon as={GoPrimitiveDot} pt={2} />a human you can call
-          &ldquo;Adam&ldquo;. <b>He has a lot of interest in programming </b>{" "}
-          since he was in high school. Most of the programming languages ​​he is
-          fluent in are web programming language, and meatballs (if you ask him
-          his favorite food). Now that he has completed his education at PKN
-          STAN, Adam continues to improve and hone programming skills.{" "}
+          &ldquo;Adam&ldquo;. <b>He has loved programming </b> since high school
+          and has been learning and building ever since. He&apos;s skilled in
+          web development—and also has a <i>talent for enjoying meatballs</i>.
+          After graduating from PKN STAN, he keeps improving his skills,
+          creating projects, and learning new things to stay up to date with
+          technology.{" "}
         </Paragraph>
       </Section>
 

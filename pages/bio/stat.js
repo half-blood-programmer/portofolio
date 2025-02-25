@@ -29,9 +29,11 @@ const Statistic = ({ statData }) => (
       />
     </Box>
     <Paragraph style={{ marginTop: 20 }}>
-      <b>The radar above is not a constellation</b>, but a representation of the
-      skills I have. Yes, apart from web programming, I also have other skills
-      of course ...
+      Oh, and that radar chart? It&apos;s not a star map—it just shows the
+      things he&apos;s good at. Besides web development, he also enjoys{" "}
+      <b>
+        graphic design, video editing, and exploring other programming areas.
+      </b>
     </Paragraph>
   </>
 );
