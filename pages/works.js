@@ -29,7 +29,7 @@ const Works = () => {
               title="Topi Terang"
               thumbnail={pic24topiterang01}
             >
-              An interactive visualization tool designed to evaluate the
+              An interactive data visualization tool that evaluates the
               effectiveness of education spending in Indonesia.
             </WorkGridItem>
           </Section>
@@ -39,8 +39,8 @@ const Works = () => {
               title="Si Monalisa"
               thumbnail={pic23simonalisa01}
             >
-              Dashboard analyzes KPPN Nabire's spending behavior with visualized
-              data on expenditures, categories, and transactions for budget
+              A dashboard that analyzes KPPN Nabire's spending behavior,
+              visualizing expenditures, categories, and transactions for budget
               evaluation.
             </WorkGridItem>
           </Section>
@@ -50,9 +50,8 @@ const Works = () => {
               title="Dashboard Kondisi Ekonomi Regional"
               thumbnail={pic23tdd01}
             >
-              Web-based platform designed to present and analyze regional
-              conditions by visualizing key data indicators across various
-              sectors
+              A web-based platform that presents and analyzes regional economic
+              conditions using key data indicators across various sectors.
             </WorkGridItem>
           </Section>
           <Section>
@@ -62,8 +61,8 @@ const Works = () => {
               thumbnail={pic23just01}
             >
               An information system that streamlines the management, tracking,
-              and analysis of employee tasks based on Employee Assignment
-              Letters (Surat Tugas/ST)
+              and analysis of employee tasks based on Assignment Letters (Surat
+              Tugas/ST).
             </WorkGridItem>
           </Section>
           <Section>
@@ -72,8 +71,8 @@ const Works = () => {
               title="Dies Natalis VII Link PKN STAN"
               thumbnail={pic22dn701}
             >
-              Information system in the form of a collection of nested or
-              multi-level links for the PKN STAN 7th Anniversary event
+              A structured multi-level link system designed for the 7th
+              Anniversary event of PKN STAN, making event navigation seamless.
             </WorkGridItem>
           </Section>
           <Section>
@@ -82,8 +81,9 @@ const Works = () => {
               title="Web-based Test Auditphoria3.0"
               thumbnail={pic22auditphoria01}
             >
-              Web-based test system for audit competition on Auditphoria3.0
-              organized by the Student Affairs Audit Board of PKN STAN
+              An online test system developed for the Auditphoria 3.0 audit
+              competition, organized by the Student Affairs Audit Board of PKN
+              STAN.
             </WorkGridItem>
           </Section>
           <Section>
@@ -92,9 +92,8 @@ const Works = () => {
               title="Dies Natalis VI-rtual Zone PKN STAN"
               thumbnail={pic21dn601}
             >
-              Official website for the PKN STAN 6th Anniversary celebration
-              event which contains activity information in the form of a 2D
-              campus map
+              The official website for PKN STAN&apos;s 6th Anniversary—featuring
+              a 2D interactive campus map and event information.
             </WorkGridItem>
           </Section>
           <Section>
@@ -103,8 +102,8 @@ const Works = () => {
               title="Sistem Informasi Wisudawan 2021"
               thumbnail={pic21siwi2101}
             >
-              Web-based information system used to register for the 2021 PKN
-              STAN Graduation Ceremony
+              A web-based registration and information system for the 2021 PKN
+              STAN Graduation Ceremony.
             </WorkGridItem>
           </Section>
           <Section>
@@ -113,18 +112,18 @@ const Works = () => {
               title="Sistem Informasi Wisudawan 2020 Admin"
               thumbnail={pic20siwi2001}
             >
-              Administrative web-based system that is used to manage information
-              and registration for the 2020 PKN STAN graduation ceremony
+              An admin portal for managing graduation registration and
+              information for the 2020 PKN STAN Graduation Ceremony.
             </WorkGridItem>
           </Section>
           <Section>
             <WorkGridItem
               id="ofc-web-mbmpknstan"
-              title="Masjid Baitul Maal PKN STAN"
+              title="Official Web of Masjid Baitul Maal PKN STAN"
               thumbnail={pic20mbm01}
             >
-              Official website that contains all information on activities from
-              Islamic organizations in PKN STAN, namely the Masjid Baitul Maal
+              The official website providing event and activity information for
+              PKN STAN&apos;s Islamic organization, Masjid Baitul Maal.
             </WorkGridItem>
           </Section>
           <Section>
@@ -133,8 +132,8 @@ const Works = () => {
               title="Pekan Raya Perpajakan Nasional 2020"
               thumbnail={pic20prpn01}
             >
-              Official website containing information and registration of
-              taxation event activities organized by PUSPA PKN STAN in 2020.
+              The official event website for PUSPA PKN STAN’s taxation fair,
+              featuring event details and registration.
             </WorkGridItem>
           </Section>
         </SimpleGrid>
